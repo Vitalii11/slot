@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<settings 
+		UIComponent="buttonsContainer_mc"
+		DoubleGameComponent="doubleGameContainer_mc"
+		ReelsComponent="reelsContainer_mc"
+		LinesComponent="linesContainer_mc"
+		linesName="line"
+		totalLines="9"
+		scatterSymbol="7"
+		wildSymbol="6">
+	</settings>
+	<graphicSwapNames>
+		<name patternName="item0" graphicName="item_mc"></name>
+		<name patternName="item1" graphicName="item_mc"></name>
+		<name patternName="item2" graphicName="item_mc"></name>
+		<name patternName="" graphicName=""></name>
+		<name patternName="" graphicName=""></name>
+		<name patternName="" graphicName=""></name>
+	</graphicSwapNames>
+	<effects>
+		<effect name="butterfly" className="" label="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="banana" className="" label="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="snake" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="anvil" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="pineapple" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="lion" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="mask" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="crazyMonkey" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="monkey" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+	</effects>
+	<combinations>
+		<combination name="nine" id="1" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
+		<combination name="fish" id="7" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
+		<combination name="fishes" id="8" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
+		<combination name="seahorse" id="9" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
+		<combination name="crab" id="10" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
+		<combination name="ray" id="11" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
+		
+		<combination name="nine" id="1" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
+		<combination name="ten" id="2" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
+		<combination name="jack" id="3" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
+		<combination name="queen" id="4" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
+		<combination name="king" id="5" symbolCount="3" soundName="win3" isLongVideo="false"></combination>
+		<combination name="ace" id="6" symbolCount="3" soundName="win3" isLongVideo="false"></combination>
+		<combination name="fish" id="7" symbolCount="3" soundName="win6" isLongVideo="false"></combination>
+		<combination name="fishes" id="8" symbolCount="3" soundName="win8" isLongVideo="false"></combination>
+		<combination name="seahorse" id="9" symbolCount="3" soundName="win7" isLongVideo="false"></combination>
+		<combination name="crab" id="10" symbolCount="3" soundName="win7" isLongVideo="false"></combination>
+		<combination name="ray" id="11" symbolCount="3" soundName="win7" isLongVideo="false"></combination>
+		
+		<combination name="nine" id="1" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
+		<combination name="ten" id="2" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
+		<combination name="jack" id="3" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
+		<combination name="queen" id="4" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
+		<combination name="king" id="5" symbolCount="4" soundName="win4" isLongVideo="false"></combination>
+		<combination name="ace" id="6" symbolCount="4" soundName="win4" isLongVideo="false"></combination>
+		<combination name="fish" id="7" symbolCount="4" soundName="win6" isLongVideo="false"></combination>
+		<combination name="fishes" id="8" symbolCount="4" soundName="win6" isLongVideo="false"></combination>
+		<combination name="seahorse" id="9" symbolCount="4" soundName="win5" isLongVideo="false"></combination>
+		<combination name="crab" id="10" symbolCount="4" soundName="win5" isLongVideo="false"></combination>
+		<combination name="ray" id="11" symbolCount="4" soundName="win5" isLongVideo="false"></combination>
+		
+		<combination name="nine" id="1" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="ten" id="2" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="jack" id="3" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="queen" id="4" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="king" id="5" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="ace" id="6" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="fish" id="7" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="fishes" id="8" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="seahorse" id="9" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="crab" id="10" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<combination name="ray" id="11" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+	</combinations>
+	<paytable>
+		
+	</paytable>
+	<server 
+		gameName="dolphins_pearl">
+
+	</server>
+</data>
