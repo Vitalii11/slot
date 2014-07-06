@@ -36,6 +36,11 @@ package com.sot.game.data
 		}
 		
 		
+		public function setData(data:Object):void
+		{
+			// parse data
+		}
+		
 		
 		public function setReelsData(data:Object):void
 		{

@@ -13,11 +13,11 @@ package com.sot.game.data
 			if (_dataStorage)
 				throw new Error("Use singleton");
 			else {
-				_slotItemsData = new SlotItemsData();
+				_slotItemsData = new this();
 			}
 		}
 		
-		public static function getSingleton():DataStorage
+		public static function instance():DataStorage
 		{
 			return _slotItemsData;
 		}
