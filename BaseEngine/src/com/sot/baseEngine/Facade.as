@@ -9,6 +9,7 @@ package com.sot.baseEngine
 	import com.sot.baseEngine.controllers.ServerController;
 	import com.sot.baseEngine.controllers.SoundController;
 	import com.sot.baseEngine.model.BaseEngineModel;
+	import com.sot.game.GameEnter;
 	
 	import flash.display.Stage;
 	
@@ -32,5 +33,9 @@ package com.sot.baseEngine
 		static public var mobileMode:Boolean;
 		static public var settingsURL:String;
 		static public var buttonsController:ButtonsController;
+		
+		
+		
+		static public var gameEnter:GameEnter;
 	}
 }

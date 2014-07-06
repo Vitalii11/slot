@@ -2,7 +2,7 @@ package settings
 {
 	/**
 	 * ...
-	 * @author seric <nevilonster@gmail.com>
+	 * @author Vitalii
 	 */
 	public class Settings 
 	{
