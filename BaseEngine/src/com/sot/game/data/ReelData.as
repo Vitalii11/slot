@@ -13,14 +13,14 @@ package com.sot.game.data
 		
 		public function ReelData() 
 		{
-			if (_dataStorage)
+			if (_reelData)
 				throw new Error("Use singleton");
 			else {
-				_reelData = new this();
+				_reelData = this;
 			}
 		}
 		
-		public static function instance():DataStorage
+		public static function instance():ReelData
 		{
 			return _reelData;
 		}

@@ -28,16 +28,17 @@ package com.sot.game
 		
 		public function GameEnter() 
 		{
-			init();
+			
+		}
+		
+		public function init():void 
+		{
+			data = new DataStorage();
+			Facade.data = data;
 			
 			createLayers();
 			createViews();
 			createModels();
-		}
-		
-		private function init():void 
-		{
-			data = new DataStorage();
 		}
 		
 		private function createLayers():void 
@@ -63,6 +64,9 @@ package com.sot.game
 		{
 			gameModel = new GameModel();
 			gameModel.addView(gameView);
+			gameModel.addToStage(bottomLayer);
+			gameModel.setCoords(0, 0);// change on coords from data
+			gameModel.init();
 		}
 		
 		// complete load data

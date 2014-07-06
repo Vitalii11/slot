@@ -9,7 +9,7 @@ package
 	import flash.net.LocalConnection;
 	import flash.system.Security;
 	
-	[SWF(width="834", height="622")]
+	[SWF(width="800", height="600")]
 	
 	public class BaseEngine extends Sprite
 	{
@@ -18,13 +18,14 @@ package
 			Security.allowDomain("*");
 			Security.allowInsecureDomain("*");
 			
-			
+			// пока что отключил
 			var baseEngineModel:BaseEngineModel = new BaseEngineModel();
 			Facade.baseEngineModel = baseEngineModel;
 			Facade.myStage = stage;
 			
 			var gameEnter:GameEnter = new GameEnter();
 			Facade.gameEnter = gameEnter;
+			gameEnter.init();
 		}
 	}
 }

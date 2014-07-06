@@ -14,9 +14,25 @@ package com.sot.game.models
 			
 		}
 		
+		public function init():void
+		{
+			// for override
+		}
+		
 		public function addView(view:Sprite):void
 		{
 			this.view = view;
+		}
+		
+		public function addToStage(container:Sprite):void
+		{
+			container.addChild(view);
+		}
+		
+		public function setCoords(posX:int, posY:int):void
+		{
+			view.x = posX;
+			view.y = posY;
 		}
 		
 		public function dispose():void

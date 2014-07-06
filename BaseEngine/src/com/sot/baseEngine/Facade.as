@@ -9,6 +9,7 @@ package com.sot.baseEngine
 	import com.sot.baseEngine.controllers.ServerController;
 	import com.sot.baseEngine.controllers.SoundController;
 	import com.sot.baseEngine.model.BaseEngineModel;
+	import com.sot.game.data.DataStorage;
 	import com.sot.game.GameEnter;
 	
 	import flash.display.Stage;
@@ -37,5 +38,6 @@ package com.sot.baseEngine
 		
 		
 		static public var gameEnter:GameEnter;
+		static public var data:DataStorage;;
 	}
 }

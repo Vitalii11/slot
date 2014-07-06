@@ -26,7 +26,7 @@ package com.sot.baseEngine.superClasses
 			_obj = new Sprite();
 			_objChild = new Sprite();
 			_obj.addChild(_objChild);
-			onRegister();
+			//onRegister();
 		}
 		
 		

@@ -11,6 +11,11 @@ package com.sot.game.models
 		
 		public function GameModel() 
 		{
+			
+		}
+		
+		override public function init():void
+		{
 			createModels();
 		}
 		

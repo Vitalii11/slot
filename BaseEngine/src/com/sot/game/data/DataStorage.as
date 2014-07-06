@@ -26,7 +26,7 @@ package com.sot.game.data
 			else {
 				_reelsStorage = new ReelData();
 				_slotItemsStorage = new SlotItemsData();
-				_dataStorage = new this();
+				_dataStorage = this;
 			}
 		}
 		

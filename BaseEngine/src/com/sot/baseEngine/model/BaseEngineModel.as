@@ -29,7 +29,8 @@ package com.sot.baseEngine.model
 		
 		public function BaseEngineModel()
 		{
-			super();
+			
+			//super();
 			
 			
 		}
