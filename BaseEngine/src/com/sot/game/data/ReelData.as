@@ -9,7 +9,7 @@ package com.sot.game.data
 		private static var _reelData:ReelData;
 		
 		private var _reelsCount:int;
-		private var _slotItemsCount:int;
+		private var _slotItemsCount:int = 3;// test value
 		
 		public function ReelData() 
 		{

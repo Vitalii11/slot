@@ -14,6 +14,10 @@ package com.sot.game.models
 		
 		public function ReelsModel()
 		{
+		}
+		
+		override public function init():void
+		{
 			createViews();
 			createReels();
 		}
@@ -25,7 +29,6 @@ package com.sot.game.models
 				var reelView:ReelView = new ReelView();
 				_reelViews.push(reelView);
 			}
-			reelView = new ReelView();
 		}
 		
 		private function createReels():void
@@ -41,11 +44,32 @@ package com.sot.game.models
 				reel.addView(_reelViews[i]);
 				reel.addToStage(Facade.gameEnter.middleLayer);
 				reel.setCoords(posX, posY);
+				reel.init();
 				
 				_reelModels.push(reel);
 				
 				posX += 150; // remove this
 			}
+		}
+		
+		
+		//
+		public function spinReels(timeDelay:Number = 0.5):void
+		{
+			
+		}
+		
+		public function spinReel():void
+		{
+			
+		}
+		
+		
+		//getters
+		
+		public function getReel(ind:int):ReelModel
+		{
+			return _reelModels[ind];
 		}
 	
 	}

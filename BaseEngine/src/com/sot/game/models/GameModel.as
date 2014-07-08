@@ -6,7 +6,7 @@ package com.sot.game.models
 	 */
 	public class GameModel extends BaseModel
 	{
-		public var reelsModel:ReelsModel;
+		private var _reelsModel:ReelsModel;
 		
 		
 		public function GameModel() 
@@ -21,7 +21,13 @@ package com.sot.game.models
 		
 		private function createModels():void 
 		{
-			reelsModel = new ReelsModel();
+			_reelsModel = new ReelsModel();
+			_reelsModel.init();
+		}
+		
+		public function get reelsModel():ReelsModel 
+		{
+			return _reelsModel;
 		}
 		
 	}
