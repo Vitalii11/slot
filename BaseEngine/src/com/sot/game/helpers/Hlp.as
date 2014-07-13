@@ -12,6 +12,11 @@ package com.sot.game.helpers
 			
 		}
 		
+		public static function tweenTo():void
+		{
+			
+		}
+		
 	}
 
 }

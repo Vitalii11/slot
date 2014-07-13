@@ -15,7 +15,7 @@ package com.sot.game.data
 		
 		
 		//general data:
-		private var _countReels:int = 3; // for test
+		private var _countReels:int = 5; // for test
 		
 		//
 		
