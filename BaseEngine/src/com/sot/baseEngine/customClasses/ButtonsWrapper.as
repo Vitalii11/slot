@@ -50,7 +50,7 @@ package com.sot.baseEngine.customClasses
 			btnSkin.stop();
 			
 			_linktoButtonController = $linkToButtonsController;
-			setUpAllStatesFromButtonsController(_linktoButtonController);
+			//setUpAllStatesFromButtonsController(_linktoButtonController);
 			
 			btnSkin.mouseChildren = false;
 			
@@ -97,9 +97,9 @@ package com.sot.baseEngine.customClasses
 			if (btnEnable) btnState = STATE_ENABLED;
 		}
 		
-		private function onBtnClick(e:MouseEvent):void 
+		private function onBtnClick(e:MouseEvent = null):void 
 		{
-			if (clickCallback != null && btnEnable) clickCallback();
+			if (clickCallback != null && btnEnable) clickCallback(e);
 		}
 		
 		protected function onBtnDown(e:MouseEvent):void 

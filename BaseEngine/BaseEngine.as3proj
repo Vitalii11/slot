@@ -55,6 +55,7 @@
   <libraryPaths>
     <element path="lib\greensock.swc" />
     <element path="asset\gameAsset_primitive.swc" />
+    <element path="asset\buttons.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

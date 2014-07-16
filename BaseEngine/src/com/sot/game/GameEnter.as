@@ -57,7 +57,7 @@ package com.sot.game
 		private function createViews():void 
 		{
 			gameView = new GameView();
-			bottomLayer.addChild(gameView);
+			//bottomLayer.addChild(gameView);
 		}
 		
 		private function createModels():void 

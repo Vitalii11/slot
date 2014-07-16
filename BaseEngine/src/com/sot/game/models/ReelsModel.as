@@ -2,6 +2,7 @@ package com.sot.game.models
 {
 	import com.greensock.BlitMask;
 	import com.sot.baseEngine.Facade;
+	import com.sot.game.data.Results;
 	import com.sot.game.views.ReelView;
 	import flash.display.Shape;
 	import flash.events.MouseEvent;
@@ -29,14 +30,15 @@ package com.sot.game.models
 			//blitMask = new BlitMask(Facade.gameEnter.middleLayer, 50, 174, 700, 300, true, true, 0, true);
 			var rectangle:Shape = new Shape; // initializing the variable named rectangle
 			rectangle.graphics.beginFill(0xFF0000); // choosing the colour for the fill, here it is red
-			rectangle.graphics.drawRect(50, 174, 700,300); // (x spacing, y spacing, width, height)
+			rectangle.graphics.drawRect(50, 108, 700,300); // (x spacing, y spacing, width, height)
 			rectangle.graphics.endFill(); // not always needed but I like to put it in to end the fill
 			Facade.myStage.addChild(rectangle); // add
+			
 			
 			Facade.gameEnter.middleLayer.mask = rectangle;
 			
 			
-			Facade.myStage.addEventListener(MouseEvent.CLICK, spinReels);
+			//Facade.myStage.addEventListener(MouseEvent.CLICK, spinReels);
 		}
 		
 		private function createViews():void 
@@ -52,7 +54,7 @@ package com.sot.game.models
 		{
 			// for test, then change on coords from data
 			var posX:int = 50;
-			var posY:int = 170;
+			var posY:int = 104;
 			//
 			
 			for (var i:int = 0; i < Facade.data.countReels; i++)
@@ -70,25 +72,35 @@ package com.sot.game.models
 		}
 		
 		
-		//
 		/**
 		 * Крутить все рилы 
 		 * */
-		public function spinReels(/*timeDelay:Number = 0.5*/ e:MouseEvent = null):void
+		public function spinReels(timeDelay:Number = 0.5):void
 		{
 			var delay:Number = 0;
 			for (var i:int = 0; i < _reelModels.length; i++ ) {
-				_reelModels[i].spin(delay);
-				delay += 0.2;
+				if(i == _reelModels.length -1)
+					_reelModels[i].spin(delay, onSpinComplete);
+				else
+					_reelModels[i].spin(delay);
+				delay += timeDelay;
 			}
 		}
 		
 		/**
 		 * Крутить определенный рил по индексу
 		 * */
-		public function spinReel(/*reelInd:int*/e:MouseEvent = null):void
+		public function spinReel(reelInd:int):void
 		{
-			_reelModels[2].spin(0);
+			_reelModels[reelInd].spin(0);
+		}
+		
+		/**
+		 * Ф-я вызываемая по окончанию прокрутки рилов
+		 * */
+		private function onSpinComplete():void
+		{
+			Results.generateResult();
 		}
 		
 		
