@@ -11,6 +11,8 @@ package com.sot.game.models
 		
 		private var _buttonsModel:ButtonsModel;
 		
+		private var _linesModel:LinesModel;
+		
 		
 		public function GameModel() 
 		{
@@ -32,6 +34,12 @@ package com.sot.game.models
 			_buttonsModel.addToStage(Facade.gameEnter.topLayer);
 			_buttonsModel.setCoords(40, 470); //change 
 			_buttonsModel.init();
+			
+			_linesModel = new LinesModel();
+			_linesModel.addView(new linesAsset());
+			_linesModel.addToStage(Facade.gameEnter.topLayer);
+			_linesModel.setCoords(0, 0); //change 
+			_linesModel.init();
 		}
 		
 		
@@ -44,6 +52,11 @@ package com.sot.game.models
 		public function get buttonsModel():ButtonsModel 
 		{
 			return _buttonsModel;
+		}
+		
+		public function get linesModel():LinesModel 
+		{
+			return _linesModel;
 		}
 		
 	}

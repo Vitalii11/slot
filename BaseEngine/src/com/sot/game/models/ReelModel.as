@@ -3,6 +3,7 @@ package com.sot.game.models
 	import com.greensock.easing.Back;
 	import com.greensock.easing.Elastic;
 	import com.greensock.easing.Linear;
+	import com.greensock.easing.Quint;
 	import com.greensock.TweenMax;
 	import com.sot.game.data.ReelData;
 	import com.sot.game.views.SlotItemView;
@@ -60,7 +61,7 @@ package com.sot.game.models
 				
 				_slotModels.push(slotModel);
 				
-				posY += _slotViews[i].height + 1;
+				posY += _slotViews[i].height + 6;
 			}
 		}
 		
@@ -68,7 +69,7 @@ package com.sot.game.models
 		private var _time:Number = 0.4;
 		public function spin(delay:Number, callBack:Function = null):void
 		{
-			view.y = 104;
+			view.y = 36;//104;
 			
 			_callBack = null;
 			_callBack = callBack;
@@ -83,12 +84,12 @@ package com.sot.game.models
 		{
 			removeTweens();
 			
-			_tweenSpin = TweenMax.to(view, _time, {y:view.y + 300, repeat:3, onRepeat:updateSpin, onComplete:lastSpin, ease:Linear.easeNone});
+			_tweenSpin = TweenMax.to(view, _time, {y:view.y + 414, repeat:3, onRepeat:updateSpin, onComplete:lastSpin, ease:Linear.easeNone});
 		}
 		
 		private function updateSpin():void 
 		{
-			view.y = 104;
+			view.y = 36;// 104;
 			
 			for (var i:int = _slotModels.length-1; i >= 0; i-- ) {
 				
@@ -101,8 +102,8 @@ package com.sot.game.models
 		
 		private function lastSpin():void 
 		{
-			//updateSpin();
-			//_tweenLast = TweenMax.to(view, _time + 0.4, {y:view.y + 300, onComplete:completeSpin, ease:Back.easeOut});
+			updateSpin();
+			_tweenLast = TweenMax.to(view, _time + 1, {y:view.y + 414, onComplete:completeSpin, ease:Back.easeOut});
 		}
 		
 		private function completeSpin():void 

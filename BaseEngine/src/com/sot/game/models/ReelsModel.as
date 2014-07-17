@@ -30,7 +30,7 @@ package com.sot.game.models
 			//blitMask = new BlitMask(Facade.gameEnter.middleLayer, 50, 174, 700, 300, true, true, 0, true);
 			var rectangle:Shape = new Shape; // initializing the variable named rectangle
 			rectangle.graphics.beginFill(0xFF0000); // choosing the colour for the fill, here it is red
-			rectangle.graphics.drawRect(50, 108, 700,300); // (x spacing, y spacing, width, height)
+			rectangle.graphics.drawRect(30, 58, 730,400); // (x spacing, y spacing, width, height)
 			rectangle.graphics.endFill(); // not always needed but I like to put it in to end the fill
 			Facade.myStage.addChild(rectangle); // add
 			
@@ -53,8 +53,8 @@ package com.sot.game.models
 		private function createReels():void
 		{
 			// for test, then change on coords from data
-			var posX:int = 50;
-			var posY:int = 104;
+			var posX:int = 30;
+			var posY:int = 36;
 			//
 			
 			for (var i:int = 0; i < Facade.data.countReels; i++)
