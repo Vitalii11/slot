@@ -1,6 +1,7 @@
 package com.sot.game.models 
 {
 	import com.sot.baseEngine.customClasses.ButtonsWrapper;
+	import com.sot.game.wrappers.ButtonWrapper;
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
@@ -31,8 +32,10 @@ package com.sot.game.models
 						var boxLine:DisplayObject = (item as MovieClip).getChildAt(j);
 						(boxLine as MovieClip).mouseChildren = false;
 						
-						var wraper:ButtonsWrapper = new ButtonsWrapper((boxLine as MovieClip));
-						wraper.clickCallback = showLines;
+						//var wraper:ButtonsWrapper = new ButtonsWrapper((boxLine as MovieClip));
+						//wraper.clickCallback = showLines;
+						
+						var wraper:ButtonWrapper = new ButtonWrapper((boxLine as MovieClip), {onClick:showLines, state:ButtonWrapper.STATE_ENABLE});
 						
 						_bttnWrapers[boxLine.name.substr(3)] = wraper;
 					}
@@ -80,14 +83,14 @@ package com.sot.game.models
 		{
 			allActiveOff();
 			
-			_bttnWrapers[ind].newCustomState(ButtonsWrapper.STATE_CLICKED);
+			_bttnWrapers[ind].btnState = ButtonWrapper.STATE_ACTIVE;
 		}
 		
 		private function allActiveOff():void
 		{
 			for each(var bttn:* in _bttnWrapers) {
-				if (bttn.btnState.frameLabel == "clicked")
-					bttn.newCustomState(ButtonsWrapper.STATE_ENABLED);
+				if (bttn.btnState == ButtonWrapper.STATE_ACTIVE)
+					bttn.btnState = ButtonWrapper.STATE_ENABLE;
 			}
 		}
 		
