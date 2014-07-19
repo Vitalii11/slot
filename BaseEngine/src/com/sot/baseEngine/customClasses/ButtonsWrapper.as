@@ -171,7 +171,7 @@ package com.sot.baseEngine.customClasses
 		// ------------------------------
 		public static var STATE_ENABLED:ButtonsState =  new ButtonsState("enable");
 		public static var STATE_DISABLED:ButtonsState = new ButtonsState("disable"); 
-		public static var STATE_HIGHLIGHTED:ButtonsState = new ButtonsState("active"); 
+		public static var STATE_HIGHLIGHTED:ButtonsState = new ButtonsState("over"); 
 		public static var STATE_CLICKED:ButtonsState = new ButtonsState("clicked"); 
 		
 		
