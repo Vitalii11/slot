@@ -7,8 +7,8 @@
 		LinesComponent="linesContainer_mc"
 		linesName="line"
 		totalLines="9"
-		scatterSymbol="7"
-		wildSymbol="6">
+		scatterSymbol="11"
+		wildSymbol="12">
 	</settings>
 	<graphicSwapNames>
 		<name patternName="item0" graphicName="item_mc"></name>
@@ -19,71 +19,322 @@
 		<name patternName="" graphicName=""></name>
 	</graphicSwapNames>
 	<effects>
-		<effect name="1"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="2"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="3"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="4"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="5"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="6"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="7"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="8"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="9"  label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="10" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="11" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="12" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="13" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="14" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
-		<effect name="15" label="" className="" url="" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="" longVideoTime=""></effect>
+		<effect name="1" 	label="1" 	className="1_short_video" 	url="animation/1_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="2" 	label="2" 	className="2_short_video" 	url="animation/2_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="3"	label="3"	className="3_short_video" 	url="animation/3_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="4" 	label="4" 	className="4_short_video" 	url="animation/4_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="5" 	label="5" 	className="5_short_video" 	url="animation/5_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="6" 	label="6" 	className="6_short_video" 	url="animation/6_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="7" 	label="" 	className="7_short_video" 	url="animation/7_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="8" 	label="" 	className="8_short_video" 	url="animation/8_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="9" 	label="" 	className="9_short_video" 	url="animation/9_short.swf"  urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="10" 	label=""	className="10_short_video" 	url="animation/10_short.swf" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="11" 	label="" 	className="11_short_video" 	url="animation/11_short.swf" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="12" 	label="" 	className="12_short_video" 	url="animation/12_short.swf" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
+		<effect name="13" 	label="" 	className="13_short_video" 	url="animation/13_short.swf" urlLongVideo="" longVideoName="" shortSoundName="" longSoundName="" shortVideoTime="2" longVideoTime=""></effect>
 	</effects>
 	<combinations>
-		<combination name="nine" id="1"	 symbolCount="2" soundName="win1" isLongVideo="false"></combination>
-		<combination name="fish" id="7" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
-		<combination name="fishes" id="8" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
-		<combination name="seahorse" id="9" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
-		<combination name="crab" id="10" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
-		<combination name="ray" id="11" symbolCount="2" soundName="win1" isLongVideo="false"></combination>
-		
-		<combination name="nine" id="1" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
-		<combination name="ten" id="2" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
-		<combination name="jack" id="3" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
-		<combination name="queen" id="4" symbolCount="3" soundName="win2" isLongVideo="false"></combination>
-		<combination name="king" id="5" symbolCount="3" soundName="win3" isLongVideo="false"></combination>
-		<combination name="ace" id="6" symbolCount="3" soundName="win3" isLongVideo="false"></combination>
-		<combination name="fish" id="7" symbolCount="3" soundName="win6" isLongVideo="false"></combination>
-		<combination name="fishes" id="8" symbolCount="3" soundName="win8" isLongVideo="false"></combination>
-		<combination name="seahorse" id="9" symbolCount="3" soundName="win7" isLongVideo="false"></combination>
-		<combination name="crab" id="10" symbolCount="3" soundName="win7" isLongVideo="false"></combination>
-		<combination name="ray" id="11" symbolCount="3" soundName="win7" isLongVideo="false"></combination>
-		
-		<combination name="nine" id="1" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
-		<combination name="ten" id="2" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
-		<combination name="jack" id="3" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
-		<combination name="queen" id="4" symbolCount="4" soundName="win7" isLongVideo="false"></combination>
-		<combination name="king" id="5" symbolCount="4" soundName="win4" isLongVideo="false"></combination>
-		<combination name="ace" id="6" symbolCount="4" soundName="win4" isLongVideo="false"></combination>
-		<combination name="fish" id="7" symbolCount="4" soundName="win6" isLongVideo="false"></combination>
-		<combination name="fishes" id="8" symbolCount="4" soundName="win6" isLongVideo="false"></combination>
-		<combination name="seahorse" id="9" symbolCount="4" soundName="win5" isLongVideo="false"></combination>
-		<combination name="crab" id="10" symbolCount="4" soundName="win5" isLongVideo="false"></combination>
-		<combination name="ray" id="11" symbolCount="4" soundName="win5" isLongVideo="false"></combination>
-		
-		<combination name="nine" id="1" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="ten" id="2" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="jack" id="3" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="queen" id="4" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="king" id="5" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="ace" id="6" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="fish" id="7" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="fishes" id="8" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="seahorse" id="9" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="crab" id="10" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
-		<combination name="ray" id="11" symbolCount="5" soundName="win5" isLongVideo="false"></combination>
+		<!-- звуки для 1 -->
+		<combination name="1" id="1" symbolCount="2" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound7 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound7 -->"/>
+			<winCase winMin="1000" winMax="9999999999999999999" soundName="<!-- dzin,sound7 -->"/>
+		</combination>
+		<combination name="1" id="1" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound6 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound6 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound6 -->"/>
+		</combination>
+		<combination name="1" id="1" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound2 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound2 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound2 -->"/>
+		</combination>
+		<combination name="1" id="1" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 2 -->
+		<combination name="2" id="2" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound9 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound9 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound9 -->"/>
+		</combination>
+		<combination name="2" id="2" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="2" id="2" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- 5dami -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 3 -->
+		<combination name="3" id="3" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound9 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound9 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound9 -->"/>
+		</combination>
+		<combination name="3" id="3" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="3" id="3" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- 5dami -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 4 -->
+		<combination name="4" id="4" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound9 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound9 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound9 -->"/>
+		</combination>
+		<combination name="4" id="4" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="4" id="4" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- 5dami -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 5 -->
+		<combination name="5" id="5" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound12 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound12 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound12 -->"/>
+		</combination>
+		<combination name="5" id="5" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- sound3,fanfar -->"/>
+		</combination>
+		<combination name="5" id="5" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- fanfar -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 6 -->
+		<combination name="6" id="6" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound12 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound12 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound12 -->"/>
+		</combination>
+		<combination name="6" id="6" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- sound3,fanfar -->"/>
+		</combination>
+		<combination name="6" id="6" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- fanfar -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 7 -->
+		<combination name="7" id="7" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound13 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound13 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound13 -->"/>
+		</combination>
+		<combination name="7" id="7" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound5 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound5 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound5 -->"/>
+		</combination>
+		<combination name="7" id="7" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound5 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound5 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound5 -->"/>
+		</combination>
+		<!-- звуки для 8 -->
+		<combination name="8" id="8" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound10 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound10 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound10 -->"/>
+		</combination>
+		<combination name="8" id="8" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound10 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound10 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound10 -->"/>
+		</combination>
+		<combination name="8" id="8" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3,sound9 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound10 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 9 -->
+		<combination name="9" id="9" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound11 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound11 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound11 -->"/>
+		</combination>
+		<combination name="9" id="9" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound10 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound10 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound10 -->"/>
+		</combination>
+		<combination name="9" id="9" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3,4vsadnik -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 10 -->
+		<combination name="10" id="10" symbolCount="2" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound7 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound7 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound7 -->"/>
+		</combination>
+		<combination name="10" id="10" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="10" id="10" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound8 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound8 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound8 -->"/>
+		</combination>
+		<combination name="10" id="10" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3,sound7 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 11 -->
+		<combination name="11" id="11" symbolCount="2" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound7 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound7 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound7 -->"/>
+		</combination>
+		<combination name="11" id="11" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="11" id="11" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="11" id="11" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3,sound7 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
+		<!-- звуки для 12 -->
+		<combination name="12" id="12" symbolCount="2" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- Teaser0 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,Teaser0 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,Teaser0 -->"/>
+		</combination>
+		<combination name="12" id="12" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- Trigger -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- Trigger -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- Trigger -->"/>
+		</combination>
+		<combination name="12" id="12" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- Trigger -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- Trigger -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- Trigger -->"/>
+		</combination>
+		<combination name="12" id="12" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- Trigger -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- Trigger -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- Trigger -->"/>
+		</combination>
+		<!-- звуки для 13 -->
+		<combination name="13" id="13" symbolCount="2" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound1 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound1 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound1 -->"/>
+		</combination>
+		<combination name="13" id="13" symbolCount="3" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound4 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound4 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound4 -->"/>
+		</combination>
+		<combination name="13" id="13" symbolCount="4" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound1 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,sound1 -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,sound1 -->"/>
+		</combination>
+		<combination name="13" id="13" symbolCount="5" isLongVideo="true">
+			<winCase winMin="1" winMax="99" soundName="<!-- sound3,sound7 -->"/>
+			<winCase winMin="100" winMax="999" soundName="<!-- sound3,fanfar -->"/>
+			<winCase winMin="1000" winMax="999999999999999999999" soundName="<!-- dzin,fanfar -->"/>
+		</combination>
 	</combinations>
 	<paytable>
+		<paytableItem name="1_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="1_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="1_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="1_2x_tf" value="2" lineMultiply="false"></paytableItem>
 		
+		<paytableItem name="2_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="2_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="2_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="2_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="3_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="3_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="3_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="3_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="4_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="4_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="4_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="4_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="5_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="5_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="5_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="5_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="6_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="6_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="6_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="6_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="7_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="7_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="7_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="7_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="8_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="8_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="8_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="8_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="9_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="9_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="9_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="9_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="10_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="10_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="10_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="10_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="11_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="11_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="11_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="11_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="12_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="12_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="12_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="12_2x_tf" value="2" lineMultiply="false"></paytableItem>
+		
+		<paytableItem name="13_5x_tf" value="800" lineMultiply="false"></paytableItem>
+		<paytableItem name="13_4x_tf" value="120" lineMultiply="false"></paytableItem>
+		<paytableItem name="13_3x_tf" value="30" lineMultiply="false"></paytableItem>
+		<paytableItem name="13_2x_tf" value="2" lineMultiply="false"></paytableItem>
 	</paytable>
 	<server 
-		gameName="dolphins_pearl">
-
+		gameName="still_alive">
 	</server>
 </data>
