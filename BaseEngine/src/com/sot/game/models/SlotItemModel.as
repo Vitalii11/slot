@@ -1,5 +1,6 @@
 package com.sot.game.models 
 {
+	import com.sot.game.views.BaseView;
 	import flash.display.MovieClip;
 	/**
 	 * ...
@@ -17,7 +18,7 @@ package com.sot.game.models
 		public function setNewType(ind:int):void
 		{
 			_type = ind;
-			(view as MovieClip).gotoAndStop(ind);
+			(view as BaseView).setItem(ind);
 		}
 		
 		public function get type():int 

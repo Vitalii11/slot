@@ -9,7 +9,7 @@ package
 	import flash.net.LocalConnection;
 	import flash.system.Security;
 	
-	[SWF(width="800", height="600")]
+	[SWF(width="870", height="630")]
 	
 	public class BaseEngine extends Sprite
 	{

@@ -6,6 +6,7 @@ package com.sot.game.models
 	import com.greensock.easing.Quint;
 	import com.greensock.TweenMax;
 	import com.sot.game.data.ReelData;
+	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.views.SlotItemView;
 	import flash.events.MouseEvent;
 	import flash.utils.setTimeout;
@@ -48,7 +49,7 @@ package com.sot.game.models
 		private function createSlotItems():void 
 		{
 			var posX:int = 0;
-			var posY:int = -400;
+			var posY:int = -600;
 			
 			for (var i:int = 0; i < ReelData.instance().slotItemsCount + itemsOverView; i++ ) {
 				var slotModel:SlotItemModel = new SlotItemModel();
@@ -57,11 +58,11 @@ package com.sot.game.models
 				slotModel.setCoords(posX, posY);
 				slotModel.init();
 				
-				slotModel.setNewType(Math.random()*9 + 1);//поменять на данные из даты
+				slotModel.setNewType(Math.random()*(SlotItemsData.countSlots-1) + 1);//поменять на данные из даты
 				
 				_slotModels.push(slotModel);
 				
-				posY += _slotViews[i].height + 6;
+				posY += _slotViews[i].height;
 			}
 		}
 		
@@ -84,7 +85,7 @@ package com.sot.game.models
 		{
 			removeTweens();
 			
-			_tweenSpin = TweenMax.to(view, _time, {y:view.y + 414, repeat:3, onRepeat:updateSpin, onComplete:lastSpin, ease:Linear.easeNone});
+			_tweenSpin = TweenMax.to(view, _time, {y:view.y + 450, repeat:3, onRepeat:updateSpin, onComplete:lastSpin, ease:Linear.easeNone});
 		}
 		
 		private function updateSpin():void 
@@ -96,26 +97,26 @@ package com.sot.game.models
 				if (i >= 3)
 					_slotModels[i].setNewType(_slotModels[i-3].type)
 				else
-					_slotModels[i].setNewType(Math.random()*9 + 1); // поменять на данные из даты
+					_slotModels[i].setNewType(Math.random()*(SlotItemsData.countSlots-1) + 1); // поменять на данные из даты
 			}
 		}
 		
 		private function lastSpin():void 
 		{
 			updateSpin();
-			_tweenLast = TweenMax.to(view, _time + 1, {y:view.y + 414, onComplete:completeSpin, ease:Back.easeOut});
+			_tweenLast = TweenMax.to(view, _time + 1, {y:view.y + 450, onComplete:completeSpin, ease:Back.easeOut});
 		}
 		
 		private function completeSpin():void 
-		{
+		{	
+			removeTweens();
+			
+			updateSpin();
+			
 			if (_callBack != null)
 				_callBack();
 				
 			_callBack = null;
-			
-			removeTweens();
-			
-			updateSpin();
 		}
 		
 		private function removeTweens():void 
@@ -128,6 +129,11 @@ package com.sot.game.models
 				
 			_tweenLast = null;
 			_tweenSpin = null;
+		}
+		
+		public function getSlot(ind:int):SlotItemModel
+		{
+			return _slotModels[ind];
 		}
 		
 	}

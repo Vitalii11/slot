@@ -12,8 +12,10 @@ package com.sot.game.data
 			
 		}
 		
-		public static function generateResult():Object
+		public static function generateResult(result:Object):Object
 		{
+			//прописать для каждого итема, возможные выигрышные комбинации, по позициям и в зависимости от колл-ва линний
+			
 			return null;
 		}
 		

@@ -2,6 +2,7 @@ package com.sot.game.models
 {
 	import com.greensock.BlitMask;
 	import com.sot.baseEngine.Facade;
+	import com.sot.game.data.ReelData;
 	import com.sot.game.data.Results;
 	import com.sot.game.views.ReelView;
 	import flash.display.Shape;
@@ -30,15 +31,12 @@ package com.sot.game.models
 			//blitMask = new BlitMask(Facade.gameEnter.middleLayer, 50, 174, 700, 300, true, true, 0, true);
 			var rectangle:Shape = new Shape; // initializing the variable named rectangle
 			rectangle.graphics.beginFill(0xFF0000); // choosing the colour for the fill, here it is red
-			rectangle.graphics.drawRect(30, 58, 730,400); // (x spacing, y spacing, width, height)
+			rectangle.graphics.drawRect(30, 36, 810,450); // (x spacing, y spacing, width, height)
 			rectangle.graphics.endFill(); // not always needed but I like to put it in to end the fill
 			Facade.myStage.addChild(rectangle); // add
 			
 			
 			Facade.gameEnter.middleLayer.mask = rectangle;
-			
-			
-			//Facade.myStage.addEventListener(MouseEvent.CLICK, spinReels);
 		}
 		
 		private function createViews():void 
@@ -67,7 +65,7 @@ package com.sot.game.models
 				
 				_reelModels.push(reel);
 				
-				posX += 150; // remove this
+				posX += 165; // remove this
 			}
 		}
 		
@@ -100,7 +98,17 @@ package com.sot.game.models
 		 * */
 		private function onSpinComplete():void
 		{
-			Results.generateResult();
+			var resultItems:Object = { };
+			
+			var count:int = 1;
+			for (var i:int = 0; i < _reelModels.length; i++ ) {
+				for (var j:int = 0; j < ReelData.instance().slotItemsCount; j++  ) {
+					resultItems[count] = _reelModels[i].getSlot(j + 4).type+1;
+					count++;
+				}
+			}
+			
+			Results.generateResult(resultItems);
 		}
 		
 		

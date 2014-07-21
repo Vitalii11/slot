@@ -8,6 +8,8 @@ package com.sot.game.data
 	{
 		private static var _slotItemsData:SlotItemsData;
 		
+		private static var _countSlots:int = 13;
+		
 		public function SlotItemsData() 
 		{
 			if (_slotItemsData)
@@ -29,6 +31,11 @@ package com.sot.game.data
 			for (var param:* in data) {
 				//парсим данные 
 			}
+		}
+		
+		static public function get countSlots():int 
+		{
+			return _countSlots;
 		}
 		
 	}
