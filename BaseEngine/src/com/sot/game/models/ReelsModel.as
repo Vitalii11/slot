@@ -99,11 +99,13 @@ package com.sot.game.models
 		private function onSpinComplete():void
 		{
 			var resultItems:Object = { };
+			//var resultItems:Array = [];
 			
 			var count:int = 1;
 			for (var i:int = 0; i < _reelModels.length; i++ ) {
 				for (var j:int = 0; j < ReelData.instance().slotItemsCount; j++  ) {
 					resultItems[count] = _reelModels[i].getSlot(j + 4).type+1;
+					//resultItems.push(_reelModels[i].getSlot(j + 4).type+1);
 					count++;
 				}
 			}
