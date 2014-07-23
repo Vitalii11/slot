@@ -9,6 +9,7 @@ package com.sot.game.models
 	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.views.SlotItemView;
 	import flash.events.MouseEvent;
+	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
 	/**
 	 * ...
@@ -68,6 +69,7 @@ package com.sot.game.models
 		
 		private var _callBack:Function = null;
 		private var _time:Number = 0.4;
+		private var _intervalSpin:int;
 		public function spin(delay:Number, callBack:Function = null):void
 		{
 			view.y = 36;
@@ -75,8 +77,10 @@ package com.sot.game.models
 			_callBack = null;
 			_callBack = callBack;
 			
+			removeTweens();
+			
 			if (delay > 0)
-				setTimeout(doSpin, delay * 1000);
+				_intervalSpin = setTimeout(doSpin, delay * 1000);
 			else
 				doSpin();
 		}
@@ -121,11 +125,13 @@ package com.sot.game.models
 		
 		private function removeTweens():void 
 		{
+			clearTimeout(_intervalSpin);
+			
 			if (_tweenLast)
-				_tweenLast.killVars(view, true);
+				_tweenLast.kill();// Vars(view, true);
 				
 			if (_tweenSpin)
-				_tweenSpin.killVars(view, true);
+				_tweenSpin.kill();// Vars(view, true);
 				
 			_tweenLast = null;
 			_tweenSpin = null;
