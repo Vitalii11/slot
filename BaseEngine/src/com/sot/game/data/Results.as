@@ -43,7 +43,6 @@ package com.sot.game.data
 				[1, 6, 7, 12, 13], //24
 				[3, 4, 9, 10, 15]  //25
 			];
-			
 			var linesData:Object = { 
 				1: {
 					//items
@@ -92,6 +91,88 @@ package com.sot.game.data
 					
 				}
 			}*/
+			
+			var elementsCompinations:Object = {
+				1: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				2: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				3: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				4: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				5: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				6: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				7: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				8: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				9: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				10: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				11: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				12: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					},
+				13: {
+					2: { win: 2, freespin: 0 },
+					3: { win: 30, freespin: 0 },
+					4: { win: 12, freespin: 0 },
+					5: { win: 800, freespin: 0 }
+					}
+				};
+			}
 			return null;
 		}
 		
