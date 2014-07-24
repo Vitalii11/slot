@@ -7,6 +7,8 @@ package com.sot.game.models
 	 */
 	public class GameModel extends BaseModel
 	{
+		public static var lines:int = 1;
+		
 		private var _reelsModel:ReelsModel;
 		
 		private var _buttonsModel:ButtonsModel;

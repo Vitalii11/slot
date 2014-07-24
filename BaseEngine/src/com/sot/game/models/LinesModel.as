@@ -53,6 +53,8 @@ package com.sot.game.models
 			var item:* = e.currentTarget;
 			var countLines:int = item.name.substr(3);
 			
+			GameModel.lines = countLines;
+			
 			var counter:int = 0;
 			for each(var line:* in _lines) {
 				if (counter >= countLines)
