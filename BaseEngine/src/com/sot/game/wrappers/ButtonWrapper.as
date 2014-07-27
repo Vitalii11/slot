@@ -15,7 +15,7 @@ package com.sot.game.wrappers
 		public static const STATE_DISABLE:String = 'disable';
 		
 		
-		private var _btnSkin:MovieClip;
+		public var _btnSkin:MovieClip;
 		
 		private var _settings:Object;
 		

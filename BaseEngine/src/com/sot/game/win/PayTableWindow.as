@@ -46,6 +46,14 @@ package com.sot.game.win
 			setItem(currentSheet);
 			
 			createArrows();
+			
+			drawBody();
+		}
+		
+		private function drawBody():void 
+		{
+			exit.btnSkin.x = 50;
+			exit.btnSkin.y = 570;
 		}
 		
 		private var leftArrow:ButtonWrapper;
@@ -112,6 +120,17 @@ package com.sot.game.win
 		{
 			images = [(new Img1 as Bitmap), (new Img2 as Bitmap), (new Img3 as Bitmap), (new Img4 as Bitmap), (new Img5 as Bitmap), (new Img6 as Bitmap),
 			(new Img7 as Bitmap), (new Img8 as Bitmap)];
+		}
+		
+		override public function dispose():void
+		{
+			leftArrow.dispose();
+			rightArrow.dispose();
+			
+			leftArrow = null;
+			rightArrow = null;
+			
+			super.dispose();
 		}
 	}
 
