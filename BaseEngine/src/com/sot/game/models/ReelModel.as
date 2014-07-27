@@ -137,9 +137,14 @@ package com.sot.game.models
 			_tweenSpin = null;
 		}
 		
-		public function getSlot(ind:int):SlotItemModel
+		public function getSlotModel(ind:int):SlotItemModel
 		{
 			return _slotModels[ind];
+		}
+		
+		public function getSlotView(ind:int):SlotItemView
+		{
+			return _slotViews[ind];
 		}
 		
 	}

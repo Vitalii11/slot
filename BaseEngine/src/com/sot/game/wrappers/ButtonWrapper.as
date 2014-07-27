@@ -111,7 +111,7 @@ package com.sot.game.wrappers
 		
 		private function changeView(frameLabel:String):void 
 		{
-			_btnSkin.gotoAndStop(frameLabel);
+			//_btnSkin.gotoAndStop(frameLabel);
 		}
 		
 		

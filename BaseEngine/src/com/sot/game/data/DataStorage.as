@@ -16,6 +16,11 @@ package com.sot.game.data
 		
 		//general data:
 		private var _countReels:int = 5; // for test
+		private var _countItems:int = 15;
+		
+		private var _spaceItems:int = 15;
+		
+		private var _payTableSheets:int = 4;
 		
 		//
 		
@@ -69,6 +74,21 @@ package com.sot.game.data
 		public function get countReels():int 
 		{
 			return _countReels;
+		}
+		
+		public function get countItems():int 
+		{
+			return _countItems;
+		}
+		
+		public function get spaceItems():int 
+		{
+			return _spaceItems;
+		}
+		
+		public function get payTableSheets():int 
+		{
+			return _payTableSheets;
 		}
 		
 	}
