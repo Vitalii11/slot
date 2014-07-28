@@ -1,5 +1,6 @@
 package com.sot.game.buttons 
 {
+	import flash.display.MovieClip;
 	/**
 	 * ...
 	 * @author Vitalii

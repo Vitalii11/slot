@@ -59,7 +59,6 @@ package com.sot.game.models
 			for each(var line:* in _lines) {
 				if (counter >= countLines)
 					break;
-				
 				line.visible = true;
 				
 				counter++;
