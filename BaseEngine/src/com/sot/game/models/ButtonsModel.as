@@ -2,6 +2,7 @@ package com.sot.game.models
 {
 	import com.sot.baseEngine.customClasses.ButtonsWrapper;
 	import com.sot.baseEngine.Facade;
+	import com.sot.game.win.PayTableWindow;
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -26,7 +27,12 @@ package com.sot.game.models
 				
 				var wraper:ButtonsWrapper;
 				
-				if (item.name == 'reel_all') {
+				if (item.name == 'pay_table') {
+					wraper = new ButtonsWrapper((item as MovieClip));
+					wraper.clickCallback = onOpenPayTable;
+					
+					_bttnWrapers.push(wraper);
+				}else if (item.name == 'reel_all') {
 					wraper = new ButtonsWrapper((item as MovieClip));
 					wraper.clickCallback = spinReels;
 					
@@ -50,6 +56,11 @@ package com.sot.game.models
 			var item:* = e.currentTarget;
 			
 			Facade.gameEnter.gameModel.reelsModel.spinReel(int(item.name.substr(10, 11)));
+		}
+		
+		private function onOpenPayTable(e:MouseEvent):void
+		{
+			new PayTableWindow().show();
 		}
 		
 	}

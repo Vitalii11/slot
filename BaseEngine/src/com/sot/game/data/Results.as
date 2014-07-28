@@ -13,7 +13,10 @@ package com.sot.game.data
 			
 		}
 		
-		private static var lines:Array = 
+		public static var positionsCoords:Object = { };
+		
+		
+		public static var lines:Array = 
 		[
 			[2, 5, 8, 11, 14], //1
 			[1, 4, 7, 10, 13], //2
@@ -123,6 +126,27 @@ package com.sot.game.data
 			}
 		};
 		
+		public static function createCoords(posX:int, posY:int, width:int, height:int):void
+		{
+			var X:int = posX;
+			var Y:int = posY;
+			
+			for (var i:int = 1; i <= DataStorage.instance().countItems; i++) 
+			{
+				positionsCoords[i] = { };
+				positionsCoords[i]['x'] = X;
+				positionsCoords[i]['y'] = Y;
+				
+				Y += height;
+				
+				if (i % 3 == 0) {
+					Y = posY;
+					X += (width + DataStorage.instance().spaceItems);
+				}
+			}
+			trace();
+		}
+		
 		public static function generateResult(result:Object):Object
 		{
 			//прописать для каждого итема, возможные выигрышные комбинации, по позициям и в зависимости от колл-ва линний
@@ -181,6 +205,7 @@ package com.sot.game.data
 			resultData['freeSpins'] = 0;
 			resultData['mana'] = 0;
 			resultData['lines'] = [];
+			resultData['count'] = [];
 				
 			for (var i:int = 0; i < GameModel.lines; i++) 
 			{
@@ -194,6 +219,9 @@ package com.sot.game.data
 				
 				if(resultLine.line > 0)
 					resultData.lines.push(resultLine.line);
+					
+				if(resultLine.count > 0)
+					resultData.count.push(resultLine.count);
 			}
 			
 			return resultData;
@@ -206,6 +234,7 @@ package com.sot.game.data
 			result['freeSpins'] = 0;
 			result['mana'] = 0;
 			result['line'] = 0;
+			result['count'] = 0;
 			
 			//for (var i:int = 0; i < arrItems.length; i++) 
 			//{
@@ -230,6 +259,7 @@ package com.sot.game.data
 				result.win = elementsCombinations[arrItems[0]][count].win;
 				result.freeSpins = elementsCombinations[arrItems[0]][count].freespin;
 				result.line = line;
+				result.count = count;
 			}
 			
 			return result;

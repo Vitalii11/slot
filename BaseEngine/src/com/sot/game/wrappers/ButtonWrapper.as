@@ -15,7 +15,7 @@ package com.sot.game.wrappers
 		public static const STATE_DISABLE:String = 'disable';
 		
 		
-		private var _btnSkin:MovieClip;
+		public var _btnSkin:MovieClip;
 		
 		private var _settings:Object;
 		
@@ -111,7 +111,7 @@ package com.sot.game.wrappers
 		
 		private function changeView(frameLabel:String):void 
 		{
-			_btnSkin.gotoAndStop(frameLabel);
+			//_btnSkin.gotoAndStop(frameLabel);
 		}
 		
 		
