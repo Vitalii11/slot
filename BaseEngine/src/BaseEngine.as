@@ -3,6 +3,7 @@ package
 	import com.sot.baseEngine.Facade;
 	import com.sot.baseEngine.controllers.SoundController;
 	import com.sot.baseEngine.model.BaseEngineModel;
+	import com.sot.game.cursor.Cursor;
 	import com.sot.game.GameEnter;
 	
 	import flash.display.Sprite;
@@ -26,6 +27,8 @@ package
 			var gameEnter:GameEnter = new GameEnter();
 			Facade.gameEnter = gameEnter;
 			gameEnter.init();
+			
+			Cursor.init();
 		}
 	}
 }

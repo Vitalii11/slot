@@ -24,6 +24,17 @@ package com.sot.game.helpers
 		[Embed(source = "../../../../../asset/images/buttons/back.png")]
 		public static var backBttn:Class;
 		
+		//------------cursor
+		[Embed(source = "../../../../../asset/images/cursor/default.png")]
+		public static var defaultCursor:Class;
+		
+		[Embed(source = "../../../../../asset/images/cursor/locked.png")]
+		public static var lockedCursor:Class;
+		
+		[Embed(source = "../../../../../asset/images/cursor/over.png")]
+		public static var overCursor:Class;
+		
+		
 		public function Textures() 
 		{
 			
