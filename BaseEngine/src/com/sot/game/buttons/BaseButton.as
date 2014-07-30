@@ -5,13 +5,24 @@ package com.sot.game.buttons
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.filters.DropShadowFilter;
+	import flash.filters.GlowFilter;
+	import flash.text.AntiAliasType;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
 	/**
 	 * ...
 	 * @author Vitalii
 	 */
 	public class BaseButton extends Sprite
 	{
+		public static const DISABLED:int 	= 0;
+		public static const NORMAL:int 		= 1;
+		public static const ACTIVE:int 		= 2;
+		
+		private var _mode:int	= NORMAL;
+		
 		private var _settings:Object;
 		
 		private var _textField:TextField;
@@ -20,6 +31,25 @@ package com.sot.game.buttons
 		
 		private var _bottomLayer:Sprite;
 		private var _topLayer:Sprite;
+		
+		public var settings:Object			= {
+			
+			// Подложка
+			width              : 150,		//Ширина
+			height             : 42,		//Высота
+			backing            : false,     //Тип сборки
+			pading             : 20,        //Высота уголка графики
+			
+			// Текст
+			fontSize           : 30,		//Размер шрифта
+			textLeading        : -8,		//Вертикальное расстояние между словами	
+			fontBorderSize     : 3,			//Размер обводки шрифта
+			fontBorderGlow     : 2,			//Размер размытия шрифта
+			caption            : 'Start',	//Текст кнопки
+			fontFamily         : "font",	//Шрифт
+			textAlign          : "left",	//Расположение текста
+			multiline          : false		//Многострочный текст
+		}
 		
 		public function BaseButton(icon:Class, settings:Object) 
 		{
@@ -34,6 +64,11 @@ package com.sot.game.buttons
 			addLayers();
 			
 			setEvents();
+			
+			drawText();
+			drawBg();
+			
+			mouseChildren = false;
 		}
 		
 		/**
@@ -46,6 +81,55 @@ package com.sot.game.buttons
 			
 			addChild(_bottomLayer);
 			addChild(_topLayer);
+		}
+		
+		/**
+		 * отрисовываем текст
+		 */
+		private function drawText():void 
+		{
+			_textField = new TextField();
+			
+			_textField.mouseEnabled = false;
+			_textField.mouseWheelEnabled = false;
+			
+			_textField.antiAliasType = AntiAliasType.ADVANCED;
+			_textField.multiline = settings.multiline;
+			_textField.embedFonts = true;
+			_textField.sharpness = 100;
+			_textField.thickness = 50;
+			
+			_textField.text = settings.caption;
+			
+			style = new TextFormat(); 
+			style.color = settings.fontColor; 
+			if(settings.multiline){
+				style.leading = settings.textLeading; 
+			}
+			style.size = settings.fontSize;
+			style.font = settings.fontFamily;
+			switch(settings.textAlign) {
+				case "left": style.align = TextFormatAlign.LEFT; break;
+				case "center": style.align = TextFormatAlign.CENTER; break;
+				case "rigth": style.align = TextFormatAlign.RIGHT; break;
+			}			
+			_textField.setTextFormat(style);
+			
+			textFilter = new GlowFilter(settings.fontBorderColor, 1, settings.fontBorderSize, settings.fontBorderSize, 10, 1);
+			var shadowFilter:DropShadowFilter = new DropShadowFilter(1,90,settings.fontBorderColor,0.9,2,2,2,1);
+			_textField.filters = [textFilter, shadowFilter];	
+			
+			_textField.width = _textField.textWidth + 8;
+			_textField.height = _textField.textHeight + 4;//settings.height;
+			_textField.y = (_icon.height - _textField.textHeight) / 2 - 2;
+			_textField.x = (_icon.width - _textField.width) / 2;
+			
+			_topLayer.addChild(textLabel);
+		}
+		
+		private function drawBg():void 
+		{
+			_bottomLayer.addChild(_icon);
 		}
 		
 		/**
@@ -84,6 +168,41 @@ package com.sot.game.buttons
 			
 		}
 		
+		public function dispose():void
+		{
+			removeEventListener(MouseEvent.MOUSE_OVER, MouseOver);
+			removeEventListener(MouseEvent.MOUSE_OUT, MouseOut);
+			removeEventListener(MouseEvent.MOUSE_DOWN, MouseDown);
+			removeEventListener(MouseEvent.MOUSE_UP, MouseUp);
+			removeEventListener(MouseEvent.CLICK, onClick);
+		}
+		
+		private function disable():void 
+		{
+			
+		}
+		
+		private function enable():void 
+		{
+			
+		}
+		
+		private function active():void 
+		{
+			
+		}
+		
+		public function set state(mode:int):void {
+			
+			_mode = mode;
+			
+			switch(mode) {
+				case BaseButton.DISABLED:  disable(); break;
+				case BaseButton.NORMAL:    enable(); break;
+				case BaseButton.ACTIVE:    active(); break;
+			}
+		}
+		
 		/**
 		 * установить текст кнопки
 		 */
@@ -110,6 +229,16 @@ package com.sot.game.buttons
 		public function get topLayer():Sprite 
 		{
 			return _topLayer;
+		}
+		
+		public function get mode():int 
+		{
+			return _mode;
+		}
+		
+		public function set mode(value:int):void 
+		{
+			_mode = value;
 		}
 		
 	}

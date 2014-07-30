@@ -47,6 +47,8 @@ package com.sot.game.win
 		public function show():void
 		{
 			Facade.gameEnter.overLayer.addChild(this);
+			container.x = (Facade.myStage.stageWidth - container.width) / 2;
+			container.y = (Facade.myStage.stageHeight - container.height) / 2;
 		}
 		
 		public function dispose():void
