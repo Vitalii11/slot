@@ -26,7 +26,7 @@ package
 			
 			var gameEnter:GameEnter = new GameEnter();
 			Facade.gameEnter = gameEnter;
-			gameEnter.init();
+			//gameEnter.init();
 			
 			Cursor.init();
 		}

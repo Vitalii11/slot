@@ -2,9 +2,12 @@ package com.sot.game
 {
 	import com.sot.baseEngine.Facade;
 	import com.sot.game.data.DataStorage;
+	import com.sot.game.events.GameEvents;
 	import com.sot.game.models.GameModel;
+	import com.sot.game.parserData.ParserXML;
 	import com.sot.game.views.GameView;
 	import flash.display.Sprite;
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author Vitalii
@@ -26,15 +29,21 @@ package com.sot.game
 		//views
 		public var gameView:GameView;
 		
-		public function GameEnter() 
-		{
-			
-		}
+		//parser
+		private var _parser:ParserXML;
 		
-		public function init():void 
+		public function GameEnter() 
 		{
 			data = new DataStorage();
 			Facade.data = data;
+			
+			_parser = new ParserXML();
+			_parser.addEventListener(GameEvents.XML_COMPLETE, init);
+		}
+		
+		public function init(e:Event = null):void 
+		{
+			_parser.removeEventListener(GameEvents.XML_COMPLETE, init);
 			
 			createLayers();
 			createViews();
