@@ -43,20 +43,6 @@ package com.sot.game.parserData
 			
 			SlotItemsData.instance().setData(data);
 			
-			//var taxList:XMLList = xmlData.products.tax;
-			//
-			//for each(var taxies:* in taxList)
-			//{
-				//var dataTax:Object = { };
-				//
-				//dataTax['code'] = String( taxies.item.@code)
-				//dataTax['percent'] = Number(taxies.item.@percent);
-				//dataTax['applies'] = String(taxies.item.@applies);
-				//dataTax['exempt'] = String(taxies.item.@exempt);
-				//
-				//DataStorage.arrTaxes.push(dataTax);
-			//}
-			//
 			dispatchEvent(new GameEvents(GameEvents.XML_COMPLETE));
 		}
 		
