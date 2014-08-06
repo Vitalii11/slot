@@ -9,9 +9,11 @@ package com.sot.game.data
 		private static var _dataStorage:DataStorage;
 		private static var _reelsStorage:ReelData;
 		private static var _slotItemsStorage:SlotItemsData;
+		private static var _txtFieldsStorage:TxtFieldsData;
 		
 		private var _reelData:ReelData;
-		private var _slotItemsData:ReelData;
+		private var _slotItemsData:SlotItemsData;
+		private var _txtFieldsData:TxtFieldsData;
 		
 		
 		//general data:
@@ -21,7 +23,6 @@ package com.sot.game.data
 		private var _spaceItems:int = 15;
 		
 		private var _payTableSheets:int = 4;
-		
 		//
 		
 		public function DataStorage() 
@@ -31,6 +32,7 @@ package com.sot.game.data
 			else {
 				_reelsStorage = new ReelData();
 				_slotItemsStorage = new SlotItemsData();
+				_txtFieldsData = new TxtFieldsData();
 				_dataStorage = this;
 			}
 		}
@@ -64,9 +66,14 @@ package com.sot.game.data
 			return _reelData;
 		}
 		
-		public function get slotItemsData():ReelData 
+		public function get slotItemsData():SlotItemsData 
 		{
 			return _slotItemsData;
+		}
+		
+		public function get txtFieldsData():TxtFieldsData 
+		{
+			return _txtFieldsData;
 		}
 		
 		

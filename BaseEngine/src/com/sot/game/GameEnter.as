@@ -5,13 +5,16 @@ package com.sot.game
 	import com.sot.game.events.GameEvents;
 	import com.sot.game.models.GameModel;
 	import com.sot.game.parserData.ParserXML;
+	import com.sot.game.ui.UI;
 	import com.sot.game.views.GameView;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.text.Font;
 	/**
 	 * ...
 	 * @author Vitalii
 	 */
+	 
 	public class GameEnter 
 	{
 		//data
@@ -29,11 +32,18 @@ package com.sot.game
 		//views
 		public var gameView:GameView;
 		
+		public var ui:UI;
+		
 		//parser
 		private var _parser:ParserXML;
 		
+		[Embed(source="../../../../asset/fonts/CarnevaleeFreakshow.ttf", fontName = "font")]
+		private var font:Class;
+		
 		public function GameEnter() 
 		{
+			Font.registerFont(font);
+			
 			data = new DataStorage();
 			Facade.data = data;
 			
@@ -48,6 +58,8 @@ package com.sot.game
 			createLayers();
 			createViews();
 			createModels();
+			
+			ui = new UI();
 		}
 		
 		private function createLayers():void 

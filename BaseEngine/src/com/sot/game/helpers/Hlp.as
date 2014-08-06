@@ -1,8 +1,11 @@
 package com.sot.game.helpers 
 {
+	import flash.filters.DropShadowFilter;
 	import flash.filters.GlowFilter;
 	import flash.text.AntiAliasType;
 	import flash.text.TextField;
+	import flash.text.TextFieldAutoSize;
+	import flash.text.TextFieldType;
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
 	/**
@@ -90,7 +93,7 @@ package com.sot.game.helpers
 					style.leading = settings.textLeading; 
 				}
 				
-				style.size = settings.fontSize*fontScale*App._fontScale;
+				style.size = settings.fontSize;
 				style.font = settings.fontFamily;
 				style.bold = settings.bold || false;
 				switch(settings.textAlign) {
