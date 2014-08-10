@@ -21,5 +21,7 @@ package settings
 		
 		static public const STAGE_WIDTH:int = 640;
 		static public const STAGE_HEIGHT:int = 480;
+		
+		public static var coins:int = 1000;
 	}
 }

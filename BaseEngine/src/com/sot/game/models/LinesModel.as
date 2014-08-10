@@ -183,6 +183,7 @@ package com.sot.game.models
 			var countLines:int = item.name.substr(3);
 			
 			GameModel.lines = countLines;
+			Facade.gameEnter.ui.updateTxt('Line', String(countLines));
 			
 			var counter:int = 0;
 			for each(var line:* in _lines) {

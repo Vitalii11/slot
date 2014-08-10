@@ -23,6 +23,10 @@ package com.sot.game.data
 		private var _spaceItems:int = 15;
 		
 		private var _payTableSheets:int = 4;
+		
+		private var _credits:int = 10000;
+		private var _speensCoast:int = 20;
+		private var _speenCoast:int = 5;
 		//
 		
 		public function DataStorage() 
@@ -96,6 +100,36 @@ package com.sot.game.data
 		public function get payTableSheets():int 
 		{
 			return _payTableSheets;
+		}
+		
+		public function get credits():int 
+		{
+			return _credits;
+		}
+		
+		public function set credits(value:int):void 
+		{
+			_credits = value;
+		}
+		
+		public function get speensCoast():int 
+		{
+			return _speensCoast;
+		}
+		
+		public function set speensCoast(value:int):void 
+		{
+			_speensCoast = value;
+		}
+		
+		public function get speenCoast():int 
+		{
+			return _speenCoast;
+		}
+		
+		public function set speenCoast(value:int):void 
+		{
+			_speenCoast = value;
 		}
 		
 	}

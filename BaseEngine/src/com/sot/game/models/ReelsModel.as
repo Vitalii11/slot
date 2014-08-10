@@ -2,6 +2,7 @@ package com.sot.game.models
 {
 	import com.greensock.BlitMask;
 	import com.sot.baseEngine.Facade;
+	import com.sot.game.data.DataStorage;
 	import com.sot.game.data.ReelData;
 	import com.sot.game.data.Results;
 	import com.sot.game.views.ReelView;
@@ -113,6 +114,9 @@ package com.sot.game.models
 			}
 			
 			var resulData:Object = Results.generateResult(resultItems);
+			
+			DataStorage.instance().credits += int(resulData.win);
+			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
 			
 			Facade.gameEnter.gameModel.linesModel.showBorders({lines:resulData.lines, counts:resulData.count});
 		}
