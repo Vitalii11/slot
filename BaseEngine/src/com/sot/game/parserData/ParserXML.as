@@ -4,6 +4,7 @@ package com.sot.game.parserData
 	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.data.TxtFieldsData;
 	import com.sot.game.events.GameEvents;
+	import com.sot.game.win.PaytableWindow;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.net.URLLoader;
@@ -17,6 +18,7 @@ package com.sot.game.parserData
 	{
 		private var _xmlLoader:URLLoader = new URLLoader();
 		private var _xmlData:XML;
+		private var itemXMLData:Object;
 		
 		public function ParserXML() 
 		{
@@ -33,14 +35,23 @@ package com.sot.game.parserData
 		private function parseData(xmlData:XML):void 
 		{
 			var itemsList:XMLList = xmlData.items.item;
-			var data:Object = { };
+			itemXMLData = { };
 			for each(var item:* in itemsList)
 			{
 				var ind:int = item.item.@name;
-				data[ind] = { };
-				data[ind]['joker'] = String(item.item.@joker);
+				itemXMLData[ind] = { };
+				itemXMLData[ind]['joker'] = String(item.item.@joker);
+				itemXMLData[ind]['wild'] = String(item.item.@wild);
+				itemXMLData[ind]['paytable1'] = String(item.item.@paytable1);
+				itemXMLData[ind]['paytable2'] = String(item.item.@paytable3);
+				itemXMLData[ind]['paytable3'] = String(item.item.@paytable4);
+				itemXMLData[ind]['paytable4'] = String(item.item.@paytable5);
+				itemXMLData[ind]['animation'] = String(item.item.@animation);
+				
 			}
-			SlotItemsData.instance().setData(data);
+			//SlotItemsData.instance().setData(itemXMLData);
+			PaytableWindow.setData(itemXMLData);
+			
 			
 			var textsList:XMLList = xmlData.textfields.textfield;
 			var dataTexts:Object = { };

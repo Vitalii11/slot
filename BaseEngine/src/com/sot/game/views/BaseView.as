@@ -48,7 +48,7 @@ package com.sot.game.views
 		}
 		
 		/**
-		 * устоновить координаты изображения
+		 * установить координаты изображения
 		 */
 		public function setCoords(posX:int, posY:int):void
 		{
@@ -57,7 +57,7 @@ package com.sot.game.views
 		}
 		
 		/**
-		 * устоновить тип элемента по индексу
+		 * установить тип элемента по индексу
 		 */
 		public function setItem(ind:uint):void
 		{
@@ -65,6 +65,9 @@ package com.sot.game.views
 			
 			_image.bitmapData = images[ind].bitmapData;
 		}
+		
+		
+		
 		
 		private function clearContainer():void
 		{

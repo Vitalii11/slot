@@ -10,6 +10,8 @@ package com.sot.game.data
 		
 		private static var _countSlots:int = 13;
 		
+		private static var itemsXMLData:Object;
+		
 		public function SlotItemsData() 
 		{
 			if (_slotItemsData)
@@ -25,11 +27,12 @@ package com.sot.game.data
 		}
 		
 		
-		
 		public function setData(data:Object):void
 		{
+			
 			for (var param:* in data) {
 				//парсим данные 
+				
 			}
 		}
 		
