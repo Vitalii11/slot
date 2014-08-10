@@ -37,12 +37,12 @@ package com.sot.game
 		//parser
 		private var _parser:ParserXML;
 		
-		//[Embed(source="../../../../asset/fonts/CarnevaleeFreakshow.ttf", fontName = "font")]
-		//private var font:Class;
+		[Embed(source = "../../../../asset/fonts/CarnevaleeFreakshow.ttf",  fontName = "font",  mimeType = "application/x-font-truetype", fontWeight = "normal", fontStyle = "normal", advancedAntiAliasing = "true", embedAsCFF = "false")]
+		private var font:Class;
 		
 		public function GameEnter() 
 		{
-			//Font.registerFont(font);
+			Font.registerFont(font);
 			
 			data = new DataStorage();
 			Facade.data = data;

@@ -2,6 +2,7 @@ package com.sot.game.models
 {
 	import com.sot.baseEngine.customClasses.ButtonsWrapper;
 	import com.sot.baseEngine.Facade;
+	import com.sot.game.data.DataStorage;
 	import com.sot.game.win.PaytableWindow;
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
@@ -49,11 +50,17 @@ package com.sot.game.models
 		private function spinReels(e:MouseEvent):void 
 		{
 			Facade.gameEnter.gameModel.reelsModel.spinReels(0.2);
+			
+			DataStorage.instance().credits -= DataStorage.instance().speensCoast * GameModel.lines;
+			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
 		}
 		
 		private function spinReel(e:MouseEvent):void 
 		{
 			var item:* = e.currentTarget;
+			
+			DataStorage.instance().credits -= DataStorage.instance().speenCoast * GameModel.lines;
+			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
 			
 			Facade.gameEnter.gameModel.reelsModel.spinReel(int(item.name.substr(10, 11)));
 		}

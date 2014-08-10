@@ -26,13 +26,14 @@ package com.sot.game.ui
 		
 		private function createTxt(data:Object):void 
 		{
-			var txt:TextField = Hlp.drawText('kdncdkwc212131323123'/*data.name*/, {
+			var txt:TextField = Hlp.drawText(data.text, {
 				color:data.color,
+				borderColor:0x00cc11,
 				fontSize:50
 			});
 			txt.width = txt.textWidth + 10;
-			txt.x = 100;// data.x;
-			txt.y = 100;// data.y;
+			txt.x = data.x;
+			txt.y = data.y;
 			
 			Facade.gameEnter.overLayer.addChild(txt);
 			
@@ -42,6 +43,7 @@ package com.sot.game.ui
 		public function updateTxt(name:String, text:String):void
 		{
 			_texts[name].text = text;
+			_texts[name].width = _texts[name].textWidth + 10;
 		}
 		
 	}

@@ -60,9 +60,10 @@ package com.sot.game.parserData
 				var txtName:String = txt.textfield.@name;
 				dataTexts[txtName] = { };
 				dataTexts[txtName]['name'] = String(txt.textfield.@name);
+				dataTexts[txtName]['text'] = String(txt.textfield.@text);
 				dataTexts[txtName]['x'] = String(txt.textfield.@x);
 				dataTexts[txtName]['y'] = String(txt.textfield.@y);
-				dataTexts[txtName]['color'] = String(txt.textfield.@color);
+				dataTexts[txtName]['color'] = int(txt.textfield.@color);
 				dataTexts[txtName]['type'] = String(txt.textfield.@type);
 				
 				TxtFieldsData.instance().countFields += 1;
