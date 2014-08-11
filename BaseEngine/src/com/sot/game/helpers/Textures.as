@@ -25,7 +25,6 @@ package com.sot.game.helpers
 		[Embed(source = "../../../../../asset/images/buttons/back.png")]
 		private static var backBttn:Class;
 		
-		//------------cursor
 		[Embed(source = "../../../../../asset/images/cursor/default.png")]
 		private static var defaultCursor:Class;
 		
@@ -45,12 +44,12 @@ package com.sot.game.helpers
 		public static function init():void
 		{
 			_data['defaultCursor'] = (new defaultCursor as Bitmap).bitmapData;
-			_data['lockedCursor'] = (new lockedCursor as Bitmap).bitmapData;
-			_data['overCursor'] = (new overCursor as Bitmap).bitmapData;
-			_data['backBttn'] = (new backBttn as Bitmap).bitmapData;
-			_data['arrow_01'] = (new arrow_01 as Bitmap).bitmapData;
-			_data['arrow_02'] = (new arrow_02 as Bitmap).bitmapData;
-			_data['arrow_03'] = (new arrow_03 as Bitmap).bitmapData;
+			_data['lockedCursor']  = (new lockedCursor as Bitmap).bitmapData;
+			_data['overCursor']    = (new overCursor as Bitmap).bitmapData;
+			_data['backBttn']      = (new backBttn as Bitmap).bitmapData;
+			_data['arrow_01']      = (new arrow_01 as Bitmap).bitmapData;
+			_data['arrow_02']      = (new arrow_02 as Bitmap).bitmapData;
+			_data['arrow_03']      = (new arrow_03 as Bitmap).bitmapData;
 		}
 		
 		public static function getByName(name:String):BitmapData
@@ -58,19 +57,19 @@ package com.sot.game.helpers
 			return _data[name]
 		}
 		
-		public static function backing(width:int, height:int, padding:int, texture:Class):Bitmap 
+		public static function backing(width:int, height:int, padding:int, name:String):Bitmap 
 		{
 			var sprite:Sprite = new Sprite();
 			
-			var topLeft:Bitmap = new texture();
+			var topLeft:Bitmap = new Bitmap(_data[name]);
 			
-			var topRight:Bitmap = new texture();
+			var topRight:Bitmap = new Bitmap(_data[name]);
 			topRight.scaleX = -1;
 			
-			var bottomLeft:Bitmap = new texture();
+			var bottomLeft:Bitmap = new Bitmap(_data[name]);
 			bottomLeft.scaleY = -1;
 			
-			var bottomRight:Bitmap = new texture();
+			var bottomRight:Bitmap = new Bitmap(_data[name]);
 			bottomRight.scaleX = bottomRight.scaleY = -1;
 			
 			var horizontal:BitmapData = new BitmapData(1, topLeft.height, true, 0);
