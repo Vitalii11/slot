@@ -38,14 +38,14 @@ package com.sot.game.cursor
 			
 			
 			
-			var overBmd:BitmapData = (new Textures.defaultCursor as Bitmap).bitmapData;
-			var defaultBmd:BitmapData = (new Textures.defaultCursor as Bitmap).bitmapData;
-			var lockedBmd:BitmapData = (new Textures.defaultCursor as Bitmap).bitmapData;
+			//var overBmd:BitmapData = (new Textures.overCursor as Bitmap).bitmapData;
+			//var defaultBmd:BitmapData = (new Textures.defaultCursor as Bitmap).bitmapData;
+			//var lockedBmd:BitmapData = (new Textures.lockedCursor as Bitmap).bitmapData;
 			
 			types = [ 
-					{type:"over", 		bmd:overBmd},
-					{type:"locked", 	bmd:lockedBmd},
-					{type:"default", 	bmd:defaultBmd}
+					{type:"over", 		bmd:Textures.getByName('overCursor')},
+					{type:"locked", 	bmd:Textures.getByName('lockedCursor')},
+					{type:"default", 	bmd:Textures.getByName('defaultCursor')}
 				];
 			
 			for (var i:String in types)

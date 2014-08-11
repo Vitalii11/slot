@@ -14,6 +14,7 @@ package com.sot.game.data
 		private var _reelData:ReelData;
 		private var _slotItemsData:SlotItemsData;
 		private var _txtFieldsData:TxtFieldsData;
+		private var _bttnsData:BttnsData;
 		
 		
 		//general data:
@@ -37,6 +38,7 @@ package com.sot.game.data
 				_reelsStorage = new ReelData();
 				_slotItemsStorage = new SlotItemsData();
 				_txtFieldsData = new TxtFieldsData();
+				_bttnsData = new BttnsData();
 				_dataStorage = this;
 			}
 		}

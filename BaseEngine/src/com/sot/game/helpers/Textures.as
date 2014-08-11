@@ -6,6 +6,7 @@ package com.sot.game.helpers
 	import flash.display.Sprite;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author Vitalii
@@ -13,31 +14,48 @@ package com.sot.game.helpers
 	public class Textures 
 	{
 		[Embed(source = "../../../../../asset/images/buttons/arrow_01.png")]
-		public static var arrow_01:Class;
+		private static var arrow_01:Class;
 		
 		[Embed(source = "../../../../../asset/images/buttons/arrow_02.png")]
-		public static var arrow_02:Class;
+		private static var arrow_02:Class;
 		
 		[Embed(source = "../../../../../asset/images/buttons/arrow_03.png")]
-		public static var arrow_03:Class;
+		private static var arrow_03:Class;
 		
 		[Embed(source = "../../../../../asset/images/buttons/back.png")]
-		public static var backBttn:Class;
+		private static var backBttn:Class;
 		
 		//------------cursor
 		[Embed(source = "../../../../../asset/images/cursor/default.png")]
-		public static var defaultCursor:Class;
+		private static var defaultCursor:Class;
 		
 		[Embed(source = "../../../../../asset/images/cursor/locked.png")]
-		public static var lockedCursor:Class;
+		private static var lockedCursor:Class;
 		
 		[Embed(source = "../../../../../asset/images/cursor/over.png")]
-		public static var overCursor:Class;
+		private static var overCursor:Class;
 		
+		private static var _data:Dictionary = new Dictionary(true);
 		
 		public function Textures() 
 		{
 			
+		}
+		
+		public static function init():void
+		{
+			_data['defaultCursor'] = (new defaultCursor as Bitmap).bitmapData;
+			_data['lockedCursor'] = (new lockedCursor as Bitmap).bitmapData;
+			_data['overCursor'] = (new overCursor as Bitmap).bitmapData;
+			_data['backBttn'] = (new backBttn as Bitmap).bitmapData;
+			_data['arrow_01'] = (new arrow_01 as Bitmap).bitmapData;
+			_data['arrow_02'] = (new arrow_02 as Bitmap).bitmapData;
+			_data['arrow_03'] = (new arrow_03 as Bitmap).bitmapData;
+		}
+		
+		public static function getByName(name:String):BitmapData
+		{
+			return _data[name]
 		}
 		
 		public static function backing(width:int, height:int, padding:int, texture:Class):Bitmap 

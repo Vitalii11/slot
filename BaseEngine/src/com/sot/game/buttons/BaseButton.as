@@ -143,27 +143,27 @@ package com.sot.game.buttons
 			addEventListener(MouseEvent.CLICK, onClick);
 		}
 		
-		private function MouseOver(e:MouseEvent):void 
+		protected function MouseOver(e:MouseEvent):void 
 		{
 			
 		}
 		
-		private function MouseOut(e:MouseEvent):void 
+		protected function MouseOut(e:MouseEvent):void 
 		{
 			
 		}
 		
-		private function MouseDown(e:MouseEvent):void 
+		protected function MouseDown(e:MouseEvent):void 
 		{
 			
 		}
 		
-		private function MouseUp(e:MouseEvent):void 
+		protected function MouseUp(e:MouseEvent):void 
 		{
 			
 		}
 		
-		private function onClick(e:MouseEvent):void 
+		protected function onClick(e:MouseEvent):void 
 		{
 			
 		}

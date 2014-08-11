@@ -1,10 +1,11 @@
 package com.sot.game.parserData 
 {
+	import com.sot.game.data.BttnsData;
 	import com.sot.game.data.DataStorage;
 	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.data.TxtFieldsData;
 	import com.sot.game.events.GameEvents;
-	import com.sot.game.win.PaytableWindow;
+	import com.sot.game.wins.PayTableWindow;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.net.URLLoader;
@@ -50,7 +51,7 @@ package com.sot.game.parserData
 				
 			}
 			//SlotItemsData.instance().setData(itemXMLData);
-			PaytableWindow.setData(itemXMLData);
+			PayTableWindow.setData(itemXMLData);
 			
 			
 			var textsList:XMLList = xmlData.textfields.textfield;
@@ -69,6 +70,26 @@ package com.sot.game.parserData
 				TxtFieldsData.instance().countFields += 1;
 			}
 			TxtFieldsData.instance().setData(dataTexts);
+			
+			var bttnsList:XMLList = xmlData.buttons.button;
+			var dataBttns:Object = { };
+			for each(var bttn:* in bttnsList)
+			{
+				var bttnName:String = bttn.button.@name;
+				dataBttns[bttnName] = { };
+				dataBttns[bttnName]['name1'] = String(bttn.button.@name1);
+				dataBttns[bttnName]['name2'] = String(bttn.button.@name2);
+				dataBttns[bttnName]['name3'] = String(bttn.button.@name3);
+				dataBttns[bttnName]['x'] = String(bttn.button.@x);
+				dataBttns[bttnName]['y'] = String(bttn.button.@y);
+				dataBttns[bttnName]['width'] = int(bttn.button.@width);
+				dataBttns[bttnName]['height'] = String(bttn.button.@height);
+				dataBttns[bttnName]['type'] = String(bttn.button.@type);
+				dataBttns[bttnName]['backing'] = String(bttn.button.@backing);
+				
+				BttnsData.instance().countBttns += 1;
+			}
+			BttnsData.instance().setData(dataBttns);
 			
 			dispatchEvent(new GameEvents(GameEvents.XML_COMPLETE));
 		}

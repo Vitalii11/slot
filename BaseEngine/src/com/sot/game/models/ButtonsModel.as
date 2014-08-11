@@ -3,7 +3,7 @@ package com.sot.game.models
 	import com.sot.baseEngine.customClasses.ButtonsWrapper;
 	import com.sot.baseEngine.Facade;
 	import com.sot.game.data.DataStorage;
-	import com.sot.game.win.PaytableWindow;
+	import com.sot.game.wins.PayTableWindow;
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -67,7 +67,7 @@ package com.sot.game.models
 		
 		private function onOpenPayTable(e:MouseEvent):void
 		{
-			new PaytableWindow().show();
+			new PayTableWindow().show();
 		}
 		
 	}

@@ -1,9 +1,10 @@
-package com.sot.game.win 
+package com.sot.game.wins 
 {
 	import com.sot.baseEngine.customClasses.ButtonsWrapper;
 	import com.sot.game.data.DataStorage;
 	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.events.GameEvents;
+	import com.sot.game.helpers.Hlp;
 	import com.sot.game.helpers.Textures;
 	import com.sot.game.wrappers.ButtonWrapper;
 	import flash.display.Bitmap;
@@ -16,7 +17,7 @@ package com.sot.game.win
 	 * ...
 	 * @author Vitalii
 	 */
-	public class PaytableWindow extends Window
+	public class PayTableWindow extends Window
 	{
 		public static var currentSheet:int = 0;
 		private var slotItemsData:SlotItemsData;
@@ -50,7 +51,7 @@ package com.sot.game.win
 		[Embed(source = "../../../../../asset/images/payTable/8.png")]
 		private var Img8:Class;
 		
-		public function PaytableWindow() 
+		public function PayTableWindow() 
 		{
 			super();
 			
@@ -84,22 +85,22 @@ package com.sot.game.win
 			var itemsLenght:int = itemsArr.length;
 			for (var i:int = 0; i < itemsLenght; i++) 
 			{
-				var text2:TextField = Window.drawText(itemsArr[i].paytable2, {
+				var text2:TextField = Hlp.drawText(itemsArr[i].paytable2, {
 					fontColor:0x000001,
 					borderColor:0xffffff,
 					textSize: 32
 				});
-				var text3:TextField = Window.drawText(itemsArr[i].paytable3, {
+				var text3:TextField = Hlp.drawText(itemsArr[i].paytable3, {
 					fontColor:0x000001,
 					borderColor:0xffffff,
 					textSize: 32
 				});
-				var text4:TextField = Window.drawText(itemsArr[i].paytable4, {
+				var text4:TextField = Hlp.drawText(itemsArr[i].paytable4, {
 					fontColor:0x000001,
 					borderColor:0xffffff,
 					textSize: 32
 				});
-				var text5:TextField = Window.drawText(itemsArr[i].paytable5, {
+				var text5:TextField = Hlp.drawText(itemsArr[i].paytable5, {
 					fontColor:0x000001,
 					borderColor:0xffffff,
 					textSize: 32
@@ -140,7 +141,7 @@ package com.sot.game.win
 		private function createArrows():void 
 		{
 			var contIcon:MovieClip = new MovieClip();
-			var icon:Bitmap = new Textures.arrow_01;// as Bitmap;
+			var icon:Bitmap = new Bitmap(Textures.getByName('arrow_01'));
 			contIcon.addChild(icon);
 			leftArrow = new ButtonWrapper(contIcon, { onClick:onLeftSheet } );
 			addChild(contIcon);
@@ -148,7 +149,7 @@ package com.sot.game.win
 			contIcon.y = 570;
 			
 			var contIcon2:MovieClip = new MovieClip();
-			var icon2:Bitmap = new Textures.arrow_01;// as Bitmap;
+			var icon2:Bitmap = new Bitmap(Textures.getByName('arrow_01'));
 			icon2.scaleX = -1;
 			contIcon2.addChild(icon2);
 			rightArrow = new ButtonWrapper(contIcon2, { onClick:onRightSheet } );

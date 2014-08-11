@@ -5,6 +5,7 @@ package
 	import com.sot.baseEngine.model.BaseEngineModel;
 	import com.sot.game.cursor.Cursor;
 	import com.sot.game.GameEnter;
+	import com.sot.game.helpers.Textures;
 	
 	import flash.display.Sprite;
 	import flash.net.LocalConnection;
@@ -27,7 +28,7 @@ package
 			var gameEnter:GameEnter = new GameEnter();
 			Facade.gameEnter = gameEnter;
 			//gameEnter.init();
-			
+			Textures.init();
 			Cursor.init();
 		}
 	}
