@@ -1,6 +1,6 @@
 package com.sot.game.parserData 
 {
-	import com.sot.game.data.BttnsData;
+	import com.sot.game.data.ButtonsData;
 	import com.sot.game.data.DataStorage;
 	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.data.TxtFieldsData;
@@ -75,7 +75,7 @@ package com.sot.game.parserData
 			var dataBttns:Object = { };
 			for each(var bttn:* in bttnsList)
 			{
-				var bttnName:String = bttn.button.@name;
+				var bttnName:String = bttn.button.@name1;
 				dataBttns[bttnName] = { };
 				dataBttns[bttnName]['name1'] = String(bttn.button.@name1);
 				dataBttns[bttnName]['name2'] = String(bttn.button.@name2);
@@ -87,9 +87,9 @@ package com.sot.game.parserData
 				dataBttns[bttnName]['type'] = String(bttn.button.@type);
 				dataBttns[bttnName]['backing'] = String(bttn.button.@backing);
 				
-				BttnsData.instance().countBttns += 1;
+				ButtonsData.instance().countBttns += 1;
 			}
-			BttnsData.instance().setData(dataBttns);
+			ButtonsData.instance().setData(dataBttns);
 			
 			dispatchEvent(new GameEvents(GameEvents.XML_COMPLETE));
 		}

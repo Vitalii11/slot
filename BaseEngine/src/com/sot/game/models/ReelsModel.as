@@ -93,7 +93,7 @@ package com.sot.game.models
 		 * */
 		public function spinReel(reelInd:int):void
 		{
-			_reelModels[reelInd].spin(0);
+			_reelModels[reelInd-1].spin(0);
 		}
 		
 		/**

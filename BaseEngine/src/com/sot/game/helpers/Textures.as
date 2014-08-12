@@ -25,6 +25,9 @@ package com.sot.game.helpers
 		[Embed(source = "../../../../../asset/images/buttons/back.png")]
 		private static var backBttn:Class;
 		
+		[Embed(source = "../../../../../asset/images/buttons/bttnCorner.png")]
+		private static var bttnCorner:Class;
+		
 		[Embed(source = "../../../../../asset/images/cursor/default.png")]
 		private static var defaultCursor:Class;
 		
@@ -47,6 +50,7 @@ package com.sot.game.helpers
 			_data['lockedCursor']  = (new lockedCursor as Bitmap).bitmapData;
 			_data['overCursor']    = (new overCursor as Bitmap).bitmapData;
 			_data['backBttn']      = (new backBttn as Bitmap).bitmapData;
+			_data['bttnCorner']    = (new bttnCorner as Bitmap).bitmapData;
 			_data['arrow_01']      = (new arrow_01 as Bitmap).bitmapData;
 			_data['arrow_02']      = (new arrow_02 as Bitmap).bitmapData;
 			_data['arrow_03']      = (new arrow_03 as Bitmap).bitmapData;

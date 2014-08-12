@@ -17,13 +17,17 @@ package com.sot.game.buttons
 	 */
 	public class BaseButton extends Sprite
 	{
+		public static const TYPE_PLAY:String = 'play';
+		public static const TYPE_REEL:String = 'reel';
+		public static const TYPE_SYMPLE:String = 'symple';
+		
 		public static const DISABLED:int 	= 0;
 		public static const NORMAL:int 		= 1;
 		public static const ACTIVE:int 		= 2;
 		
 		private var _mode:int	= NORMAL;
 		
-		private var _settings:Object;
+		//private var _settings:Object;
 		
 		private var _textField:TextField;
 		
@@ -32,7 +36,9 @@ package com.sot.game.buttons
 		private var _bottomLayer:Sprite;
 		private var _topLayer:Sprite;
 		
-		public var settings:Object			= {
+		private var _style:TextFormat;
+		
+		public var _settings:Object			= {
 			
 			// Подложка
 			width              : 150,		//Ширина
@@ -51,14 +57,17 @@ package com.sot.game.buttons
 			multiline          : false		//Многострочный текст
 		}
 		
-		public function BaseButton(icon:Class, settings:Object) 
+		public function BaseButton(iconName:String, settings:Object) 
 		{
-			_settings = settings;
+			for (var key:* in settings) {
+				_settings[key] = settings[key];
+			}
+			//_settings = settings;
 			
 			if (settings.backing) {
-				_icon = Textures.backing(settings.width, settings.height, settings.pading, icon);
+				_icon = Textures.backing(settings.width, settings.height, settings.pading, iconName);
 			}else {
-				_icon = new icon();
+				_icon = new Bitmap(Textures.getByName(iconName));
 			}
 			
 			addLayers();
@@ -101,21 +110,21 @@ package com.sot.game.buttons
 			
 			_textField.text = settings.caption;
 			
-			style = new TextFormat(); 
-			style.color = settings.fontColor; 
+			_style = new TextFormat(); 
+			_style.color = settings.fontColor; 
 			if(settings.multiline){
-				style.leading = settings.textLeading; 
+				_style.leading = settings.textLeading; 
 			}
-			style.size = settings.fontSize;
-			style.font = settings.fontFamily;
+			_style.size = settings.fontSize;
+			_style.font = settings.fontFamily;
 			switch(settings.textAlign) {
-				case "left": style.align = TextFormatAlign.LEFT; break;
-				case "center": style.align = TextFormatAlign.CENTER; break;
-				case "rigth": style.align = TextFormatAlign.RIGHT; break;
+				case "left": _style.align = TextFormatAlign.LEFT; break;
+				case "center": _style.align = TextFormatAlign.CENTER; break;
+				case "rigth": _style.align = TextFormatAlign.RIGHT; break;
 			}			
-			_textField.setTextFormat(style);
+			_textField.setTextFormat(_style);
 			
-			textFilter = new GlowFilter(settings.fontBorderColor, 1, settings.fontBorderSize, settings.fontBorderSize, 10, 1);
+			var textFilter:GlowFilter = new GlowFilter(settings.fontBorderColor, 1, settings.fontBorderSize, settings.fontBorderSize, 10, 1);
 			var shadowFilter:DropShadowFilter = new DropShadowFilter(1,90,settings.fontBorderColor,0.9,2,2,2,1);
 			_textField.filters = [textFilter, shadowFilter];	
 			
@@ -124,7 +133,7 @@ package com.sot.game.buttons
 			_textField.y = (_icon.height - _textField.textHeight) / 2 - 2;
 			_textField.x = (_icon.width - _textField.width) / 2;
 			
-			_topLayer.addChild(textLabel);
+			_topLayer.addChild(_textField);
 		}
 		
 		private function drawBg():void 
@@ -165,7 +174,8 @@ package com.sot.game.buttons
 		
 		protected function onClick(e:MouseEvent):void 
 		{
-			
+			if (_settings.onClick)
+				_settings.onClick(e);
 		}
 		
 		public function dispose():void

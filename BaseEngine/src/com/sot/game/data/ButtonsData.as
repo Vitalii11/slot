@@ -4,15 +4,15 @@ package com.sot.game.data
 	 * ...
 	 * @author Vitalii
 	 */
-	public class BttnsData 
+	public class ButtonsData 
 	{
-		private static var _bttnsData:BttnsData;
+		private static var _bttnsData:ButtonsData;
 		
 		private var _data:Object;
 		
 		private var _countBttns:int;
 		
-		public function BttnsData() 
+		public function ButtonsData() 
 		{
 			if (_bttnsData)
 				throw new Error("Use singleton");
@@ -21,7 +21,7 @@ package com.sot.game.data
 			}
 		}
 		
-		public static function instance():BttnsData
+		public static function instance():ButtonsData
 		{
 			return _bttnsData;
 		}

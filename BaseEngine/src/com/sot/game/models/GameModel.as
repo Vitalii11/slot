@@ -32,9 +32,9 @@ package com.sot.game.models
 			_reelsModel.init();
 			
 			_buttonsModel = new ButtonsModel();
-			_buttonsModel.addView(new spinBttnsAsset());
-			_buttonsModel.addToStage(Facade.gameEnter.topLayer);
-			_buttonsModel.setCoords(30, 500); //change 
+			//_buttonsModel.addView(new spinBttnsAsset());
+			//_buttonsModel.addToStage(Facade.gameEnter.topLayer);
+			//_buttonsModel.setCoords(30, 500); //change 
 			_buttonsModel.init();
 			
 			_linesModel = new LinesModel();
