@@ -5,6 +5,7 @@ package com.sot.game.models
 	import com.greensock.easing.Linear;
 	import com.greensock.easing.Quint;
 	import com.greensock.TweenMax;
+	import com.sot.game.anim.SlotItemAnimation;
 	import com.sot.game.data.ReelData;
 	import com.sot.game.data.SlotItemsData;
 	import com.sot.game.views.SlotItemView;
@@ -20,7 +21,7 @@ package com.sot.game.models
 		private var _reelsModel:ReelsModel;
 		
 		private var _slotModels:Vector.<SlotItemModel> = new Vector.<SlotItemModel>;
-		private var _slotViews:Vector.<SlotItemView> = new Vector.<SlotItemView>;
+		private var _slotAnims:Vector.<SlotItemAnimation> = new Vector.<SlotItemAnimation>;
 		
 		private var itemsOverView:int = 5;
 		
@@ -42,8 +43,11 @@ package com.sot.game.models
 		{
 			for (var i:int = 0; i < ReelData.instance().slotItemsCount + itemsOverView; i++ ) 
 			{
-				var slotView:SlotItemView = new SlotItemView();
-				_slotViews.push(slotView);
+				//var slotView:SlotItemView = new SlotItemView();
+				//_slotViews.push(slotView);
+				
+				var slotAnim:SlotItemAnimation = new SlotItemAnimation('slot' + (i+1));
+				_slotAnims.push(slotAnim);
 			}
 		}
 		
@@ -54,23 +58,23 @@ package com.sot.game.models
 			
 			for (var i:int = 0; i < ReelData.instance().slotItemsCount + itemsOverView; i++ ) {
 				var slotModel:SlotItemModel = new SlotItemModel();
-				slotModel.addView(_slotViews[i]);
+				slotModel.addView(_slotAnims[i]);
 				slotModel.addToStage(view);
 				slotModel.setCoords(posX, posY);
 				slotModel.init();
 				
-				slotModel.setNewType(Math.random()*(SlotItemsData.countSlots-1) + 1);//поменять на данные из даты
+				slotModel.setNewType('slot' + (int(Math.random()*(SlotItemsData.countSlots-1)) + 1));//поменять на данные из даты
 				
 				_slotModels.push(slotModel);
 				
-				posY += _slotViews[i].height;
+				posY += _slotAnims[i].height;
 			}
 		}
 		
 		private var _callBack:Function = null;
 		private var _time:Number = 0.4;
 		private var _intervalSpin:int;
-		public function spin(delay:Number, callBack:Function = null):void
+		public function spin(delay:Number = 0, callBack:Function = null):void
 		{
 			view.y = 36;
 			
@@ -101,12 +105,13 @@ package com.sot.game.models
 				if (i >= 3)
 					_slotModels[i].setNewType(_slotModels[i-3].type)
 				else
-					_slotModels[i].setNewType(Math.random()*(SlotItemsData.countSlots-1) + 1); // поменять на данные из даты
+					_slotModels[i].setNewType('slot' + (int(Math.random()*(SlotItemsData.countSlots-1)) + 1)); // поменять на данные из даты
 			}
 		}
 		
 		private function lastSpin():void 
 		{
+			removeTweens();
 			updateSpin();
 			_tweenLast = TweenMax.to(view, _time + 1, {y:view.y + 450, onComplete:completeSpin, ease:Back.easeOut});
 		}
@@ -123,15 +128,23 @@ package com.sot.game.models
 			_callBack = null;
 		}
 		
+		public function stop(delay:Number = 0):void 
+		{
+			if (delay > 0)
+				setTimeout(lastSpin, delay * 1000);
+			else
+				lastSpin();
+		}
+		
 		private function removeTweens():void 
 		{
 			clearTimeout(_intervalSpin);
 			
 			if (_tweenLast)
-				_tweenLast.kill();// Vars(view, true);
+				_tweenLast.kill();
 				
 			if (_tweenSpin)
-				_tweenSpin.kill();// Vars(view, true);
+				_tweenSpin.kill();
 				
 			_tweenLast = null;
 			_tweenSpin = null;
@@ -142,9 +155,9 @@ package com.sot.game.models
 			return _slotModels[ind];
 		}
 		
-		public function getSlotView(ind:int):SlotItemView
+		public function getSlotAnim(ind:int):SlotItemAnimation
 		{
-			return _slotViews[ind];
+			return _slotAnims[ind];
 		}
 		
 	}

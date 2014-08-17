@@ -19,6 +19,8 @@ package com.sot.game.models
 		//private var _bttnWrapers:Vector.<ButtonsWrapper> = new Vector.<ButtonsWrapper>;
 		private var _bttnWrapers:Vector.<BaseButton> = new Vector.<BaseButton>(20);
 		
+		private var _reelsModel:ReelsModel;
+		
 		public function ButtonsModel() 
 		{
 			
@@ -49,6 +51,7 @@ package com.sot.game.models
 				//}
 			//}
 			
+			_reelsModel = Facade.gameEnter.gameModel.reelsModel;
 			
 			var data:Object = ButtonsData.instance().data;
 			
@@ -61,10 +64,10 @@ package com.sot.game.models
 		{
 			switch(data.type) {
 				case BaseButton.TYPE_PLAY:
-					createPlayBttn(data);
+					createReelBttn(data, spinReels);
 				break;
 				case BaseButton.TYPE_REEL:
-					createReelBttn(data);
+					createReelBttn(data, spinReel);
 				break;
 				case BaseButton.TYPE_SYMPLE:
 					createSympleBttn(data);
@@ -77,15 +80,20 @@ package com.sot.game.models
 			
 		}
 		
-		private function createReelBttn(data:Object):void 
+		private function createReelBttn(data:Object, callBack:Function):void 
 		{
 			var button:BaseButton = new BaseButton('bttnCorner', { 
-				pading:30,
-				width:data.width,
-				height:data.height,
-				caption:data.name1,
-				backing:data.backing,
-				onClick:spinReel
+				pading            :30,
+				width             :data.width,
+				height            :data.height,
+				caption1          :data.name1,
+				caption2          :data.name2,
+				caption3          :data.name3,
+				backing           :data.backing,
+				onClick           :callBack,
+				fontColor         :data.color,
+				fontBorderColor   :data.borderColor,
+				fontSize          :data.fontSize
 			} );
 			
 			button.x = data.x;
@@ -94,7 +102,6 @@ package com.sot.game.models
 			Facade.gameEnter.topLayer.addChild(button);
 			
 			_bttnWrapers.push(button);
-			//button.addEventListener(MouseEvent.CLICK, spinReel);//вынести слушатель внутрь кнопки
 		}
 		
 		private function createSympleBttn(data:Object):void 
@@ -104,20 +111,47 @@ package com.sot.game.models
 		
 		private function spinReels(e:MouseEvent):void 
 		{
-			Facade.gameEnter.gameModel.reelsModel.spinReels(0.2);
+			var bttn:BaseButton = e.currentTarget as BaseButton;
 			
-			DataStorage.instance().credits -= DataStorage.instance().speensCoast * GameModel.lines;
-			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
+			if (bttn.mode == BaseButton.DISABLED)
+				return;
+			
+			switch(bttn.mode) {
+				case BaseButton.NORMAL:
+					_reelsModel.spinReels(0.2, bttn);
+					bttn.state = BaseButton.ACTIVE;
+				break;
+				case BaseButton.ACTIVE:
+					_reelsModel.stopReels(0.2);
+					bttn.state = BaseButton.DISABLED;
+				break;
+				//case BaseButton.DONE:
+					//
+				//break;
+			}
 		}
 		
 		private function spinReel(e:MouseEvent):void 
-		{
-			var item:* = e.currentTarget;
+		{	
+			var bttn:BaseButton = e.currentTarget as BaseButton;
 			
-			DataStorage.instance().credits -= DataStorage.instance().speenCoast * GameModel.lines;
-			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
+			if (bttn.mode == BaseButton.DISABLED)
+				return;
 			
-			Facade.gameEnter.gameModel.reelsModel.spinReel(int(item.name.substr(8, 9)));
+			switch(bttn.mode) {
+				case BaseButton.NORMAL:
+					_reelsModel.spinReel(int(bttn.name.substr(8, 9)), bttn);
+					bttn.state = BaseButton.ACTIVE;
+				break;
+				case BaseButton.ACTIVE:
+					_reelsModel.stopReel(int(bttn.name.substr(8, 9)));
+					bttn.state = BaseButton.DISABLED;
+				break;
+				//case BaseButton.DONE:
+					//
+				//break;
+			}
+			
 		}
 		
 		private function onOpenPayTable(e:MouseEvent):void

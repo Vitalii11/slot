@@ -2,6 +2,7 @@ package com.sot.game.models
 {
 	import com.greensock.BlitMask;
 	import com.sot.baseEngine.Facade;
+	import com.sot.game.buttons.BaseButton;
 	import com.sot.game.data.DataStorage;
 	import com.sot.game.data.ReelData;
 	import com.sot.game.data.Results;
@@ -69,15 +70,16 @@ package com.sot.game.models
 				posX += 165; // remove this
 			}
 			
-			Results.createCoords(30, 36, _reelModels[0].getSlotView(0).width, _reelModels[0].getSlotView(0).height);
+			Results.createCoords(30, 36, _reelModels[0].getSlotAnim(0).width, _reelModels[0].getSlotAnim(0).height);
 		}
 		
-		
+		private var _startBttn:BaseButton;
 		/**
 		 * Крутить все рилы 
 		 * */
-		public function spinReels(timeDelay:Number = 0.5):void
+		public function spinReels(timeDelay:Number = 0.5, bttn:BaseButton = null):void
 		{
+			_startBttn = bttn;
 			var delay:Number = 0;
 			for (var i:int = 0; i < _reelModels.length; i++ ) {
 				if(i == _reelModels.length -1)
@@ -86,14 +88,43 @@ package com.sot.game.models
 					_reelModels[i].spin(delay);
 				delay += timeDelay;
 			}
+			
+			DataStorage.instance().credits -= DataStorage.instance().speensCoast * GameModel.lines;
+			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
 		}
 		
 		/**
 		 * Крутить определенный рил по индексу
 		 * */
-		public function spinReel(reelInd:int):void
+		public function spinReel(reelInd:int, bttn:BaseButton = null):void
 		{
-			_reelModels[reelInd-1].spin(0);
+			_startBttn = bttn;
+			
+			_reelModels[reelInd - 1].spin(0, onSpinComplete);
+			
+			DataStorage.instance().credits -= DataStorage.instance().speenCoast * GameModel.lines;
+			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
+		}
+		
+		/**
+		 * Остановить все рилы
+		 * */
+		public function stopReels(timeDelay:Number = 0.5):void
+		{
+			var delay:Number = 0;
+			for (var i:int = 0; i < _reelModels.length; i++) 
+			{
+				_reelModels[i].stop(delay);
+				delay += timeDelay;
+			}
+		}
+		
+		/**
+		 * Остановить определенный рил по индексу
+		 * */
+		public function stopReel(reelInd:int):void
+		{
+			_reelModels[reelInd - 1].stop();
 		}
 		
 		/**
@@ -102,13 +133,11 @@ package com.sot.game.models
 		private function onSpinComplete():void
 		{
 			var resultItems:Object = { };
-			//var resultItems:Array = [];
 			
 			var count:int = 1;
 			for (var i:int = 0; i < _reelModels.length; i++ ) {
 				for (var j:int = 0; j < ReelData.instance().slotItemsCount; j++  ) {
-					resultItems[count] = _reelModels[i].getSlotModel(j + 4).type+1;
-					//resultItems.push(_reelModels[i].getSlot(j + 4).type+1);
+					resultItems[count] = _reelModels[i].getSlotModel(j + 4).mode;
 					count++;
 				}
 			}
@@ -118,12 +147,16 @@ package com.sot.game.models
 			DataStorage.instance().credits += int(resulData.win);
 			Facade.gameEnter.ui.updateTxt('Credits', String(DataStorage.instance().credits));
 			
-			Facade.gameEnter.gameModel.linesModel.showBorders({lines:resulData.lines, counts:resulData.count});
+			Facade.gameEnter.gameModel.linesModel.showBorders( { lines:resulData.lines, counts:resulData.count } );
+			
+			if (_startBttn) {
+				_startBttn.state = BaseButton.NORMAL;
+				_startBttn = null;
+			}
 		}
 		
 		
 		//getters
-		
 		public function getReel(ind:int):ReelModel
 		{
 			return _reelModels[ind];

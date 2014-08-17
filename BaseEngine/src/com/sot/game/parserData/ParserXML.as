@@ -86,6 +86,9 @@ package com.sot.game.parserData
 				dataBttns[bttnName]['height'] = String(bttn.button.@height);
 				dataBttns[bttnName]['type'] = String(bttn.button.@type);
 				dataBttns[bttnName]['backing'] = String(bttn.button.@backing);
+				dataBttns[bttnName]['color'] = int(bttn.button.@color);
+				dataBttns[bttnName]['borderColor'] = int(bttn.button.@borderColor);
+				dataBttns[bttnName]['fontSize'] = int(bttn.button.@fontSize);
 				
 				ButtonsData.instance().countBttns += 1;
 			}

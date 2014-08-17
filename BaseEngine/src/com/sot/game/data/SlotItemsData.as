@@ -8,7 +8,8 @@ package com.sot.game.data
 	{
 		private static var _slotItemsData:SlotItemsData;
 		
-		private static var _countSlots:int = 13;
+		private static var _countSlots:int = 10;
+		private static var _animationTime:int = 1000;
 		
 		private static var itemsXMLData:Object;
 		
@@ -39,6 +40,11 @@ package com.sot.game.data
 		static public function get countSlots():int 
 		{
 			return _countSlots;
+		}
+		
+		static public function get animationTime():int 
+		{
+			return _animationTime;
 		}
 		
 	}

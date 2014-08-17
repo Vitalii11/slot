@@ -1,5 +1,6 @@
 package com.sot.game.models 
 {
+	import com.sot.game.anim.BaseAnimation;
 	import com.sot.game.views.BaseView;
 	import flash.display.MovieClip;
 	/**
@@ -8,22 +9,29 @@ package com.sot.game.models
 	 */
 	public class SlotItemModel extends BaseModel
 	{
-		private var _type:int;
+		private var _type:String;
+		private var _mode:int;
 		
 		public function SlotItemModel() 
 		{
 			
 		}
 		
-		public function setNewType(ind:int):void
+		public function setNewType(name:String):void
 		{
-			_type = ind;
-			(view as BaseView).setItem(ind);
+			_type = name;
+			_mode = int(name.substr(4));
+			(view as BaseAnimation).setItem(name);
 		}
 		
-		public function get type():int 
+		public function get type():String 
 		{
 			return _type;
+		}
+		
+		public function get mode():int 
+		{
+			return _mode;
 		}
 		
 	}

@@ -104,30 +104,9 @@ package com.sot.game.models
 			
 			for (var i:int = 0; i < data.lines.length; i++) 
 			{
-				//borderPositions = Results.lines[data.lines[i] - 1];
-				//countBorders = data.counts[i]
-				
 				setTimeout(showBordersInLine, intTime);
 				
 				intTime += 1100;
-				//for (var j:int = 0; j < data.counts[i]; j++) 
-				//{
-					//var borderView:BorderView = new BorderView();
-					//_borderViews.push(borderView);
-					//
-					//var borderModel:BorderModel = new BorderModel();
-				//
-					//borderModel.addView(borderView);
-					//borderModel.addToStage(Facade.gameEnter.topLayer);
-					//borderModel.setCoords(Results.positionsCoords[borderPositions[j]].x, Results.positionsCoords[borderPositions[j]].y);
-					//borderModel.init();
-					//
-					//_borderModels.push(borderModel);
-					//
-					//_lines[data.lines[i]].visible = true;
-					//hideInterval = setInterval(hideLines, timeToHide);
-				//}
-				
 			}
 		}
 		
@@ -147,6 +126,28 @@ package com.sot.game.models
 				borderModel.addToStage(Facade.gameEnter.topLayer);
 				borderModel.setCoords(Results.positionsCoords[borderPositions[j]].x, Results.positionsCoords[borderPositions[j]].y);
 				borderModel.init();
+				
+				borderPositions[j]
+				
+				var counter:int = 0;
+				var ind:int = borderPositions[j] - 1;
+				var stop:Boolean = false;
+				for (var i:int = 0; i < DataStorage.instance().countReels; i++) 
+				{
+					for (var k:int = 4; k < 7; k++) 
+					{
+						if (ind == counter) {
+							Facade.gameEnter.gameModel.reelsModel.getReel(i).getSlotAnim(k).startAnimation();
+							stop  = true;
+						}
+						if (stop)
+							break;
+						
+						counter += 1;
+					}
+					if (stop)
+						break;
+				}
 				
 				_borderModels.push(borderModel);
 				

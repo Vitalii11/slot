@@ -96,7 +96,6 @@ package com.sot.game
 			data.setData(data);
 		}
 		
-		
 		public function clearLayer(layer:Sprite):void
 		{
 			while (layer.numChildren) {

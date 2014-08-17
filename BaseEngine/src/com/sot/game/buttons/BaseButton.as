@@ -24,6 +24,7 @@ package com.sot.game.buttons
 		public static const DISABLED:int 	= 0;
 		public static const NORMAL:int 		= 1;
 		public static const ACTIVE:int 		= 2;
+		public static const DONE:int 		= 3;
 		
 		private var _mode:int	= NORMAL;
 		
@@ -51,10 +52,14 @@ package com.sot.game.buttons
 			textLeading        : -8,		//Вертикальное расстояние между словами	
 			fontBorderSize     : 3,			//Размер обводки шрифта
 			fontBorderGlow     : 2,			//Размер размытия шрифта
-			caption            : 'Start',	//Текст кнопки
+			caption1           : 'Start',	//Текст кнопки
+			caption2           : 'Active',	//Текст кнопки
+			caption3           : 'Disable',	//Текст кнопки
 			fontFamily         : "font",	//Шрифт
 			textAlign          : "left",	//Расположение текста
-			multiline          : false		//Многострочный текст
+			multiline          : false,		//Многострочный текст
+			fontColor          : 0x000000,   //Цвет текста
+			fontBorderColor    : 0xffffff   //Цвет обводки текста
 		}
 		
 		public function BaseButton(iconName:String, settings:Object) 
@@ -108,7 +113,7 @@ package com.sot.game.buttons
 			_textField.sharpness = 100;
 			_textField.thickness = 50;
 			
-			_textField.text = settings.caption;
+			_textField.text = settings.caption1;
 			
 			_style = new TextFormat(); 
 			_style.color = settings.fontColor; 
@@ -189,17 +194,22 @@ package com.sot.game.buttons
 		
 		private function disable():void 
 		{
-			
+			caption = _settings.caption3;
 		}
 		
 		private function enable():void 
 		{
-			
+			caption = _settings.caption1;
 		}
 		
 		private function active():void 
 		{
-			
+			caption = _settings.caption2;
+		}
+		
+		private function done():void 
+		{
+			caption = _settings.caption3;
 		}
 		
 		public function set state(mode:int):void {
@@ -210,6 +220,7 @@ package com.sot.game.buttons
 				case BaseButton.DISABLED:  disable(); break;
 				case BaseButton.NORMAL:    enable(); break;
 				case BaseButton.ACTIVE:    active(); break;
+				case BaseButton.DONE:      done(); break;
 			}
 		}
 		
@@ -219,6 +230,8 @@ package com.sot.game.buttons
 		public function set caption(txt:String):void
 		{
 			_textField.text = txt;
+			_textField.setTextFormat(_style);
+			_textField.width = _textField.textWidth + 6;
 		}
 		
 		public function get settings():Object 

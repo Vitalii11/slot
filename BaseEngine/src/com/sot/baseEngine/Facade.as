@@ -34,6 +34,7 @@ package com.sot.baseEngine
 		static public var mobileMode:Boolean;
 		static public var settingsURL:String;
 		static public var buttonsController:ButtonsController;
+		static public var main:BaseEngine;
 		
 		
 		
