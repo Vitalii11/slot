@@ -232,6 +232,7 @@ package com.sot.game.buttons
 			_textField.text = txt;
 			_textField.setTextFormat(_style);
 			_textField.width = _textField.textWidth + 6;
+			_textField.x = (_icon.width - _textField.width) / 2;
 		}
 		
 		public function get settings():Object 
